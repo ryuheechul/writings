@@ -1,18 +1,16 @@
-# Index
+# Git ABC
 
-Working...
+- [Intro](intro.md)
+- Install
+- Config
 
-[Git Intro](git-intro.md)
-Git Install
-Git Config
+- Repository
+- Indexing
+- Commit
+- Checkout
+- Reset
 
-Git Repo
-Git Indexing
-Git Commit
-Git Checkout
-Git Reset
+- Branch
+- Remote
 
-Git Symbol
-
-Git Branch
-Git Remote
+- Symbol

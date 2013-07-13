@@ -1,3 +1,3 @@
 # Some Technical Writings
 
-[Git ABC](contents/git/readme.md)
+[Git ABC](contents/git-abc/readme.md)
