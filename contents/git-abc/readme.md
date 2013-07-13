@@ -1,16 +1,18 @@
 # Git ABC
 
-- [Intro](intro.md)
-- Install
-- Config
+Working;
 
-- Repository
-- Indexing
-- Commit
-- Checkout
-- Reset
+- [Introduction](introduction.md)
+- [Install](install.md)
+- [Config](config.md)
 
-- Branch
-- Remote
+- [Repository](repository.md)
+- [Indexing](index.md)
+- [Commit](commit.md)
+- [Checkout](checkout.md)
+- [Reset](reset.md)
 
-- Symbol
+- [Branch](branch.md)
+- [Remote](remote.md)
+
+- [Symbol](symbol.md)
