@@ -1,6 +1,6 @@
 # Git ABC
 
-공사중;
+미래의 나를 위해 남기는 Git 메모;
 
 - [Introduction](introduction.md)
 - [Install](install.md)
@@ -9,7 +9,7 @@
 >
 
 - [Repository](repository.md)
-- [Indexing](index.md)
+- [Index](index.md)
 - [Commit](commit.md)
 - [Checkout](checkout.md)
 - [Reset](reset.md)

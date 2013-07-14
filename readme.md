@@ -1,3 +1,4 @@
 # Some Technical Writings
 
-[Git ABC](contents/git-abc/readme.md)
+* [Git ABC](writings/git-abc)
+* [Functional Programming For The Rest of Us](writings/fp-for-r-us)
