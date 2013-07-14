@@ -1,0 +1,115 @@
+Cappuccino 설치 방법 - Deprecated
+drypot 2011-08-06 21:42
+아래 글은 Cappuccino 설치에 대해 어제 적은 글인데 잘못된 내용이 많아 새 글줄에 다시 적겠습니다.
+
+*
+
+Cappuccino 는 브라우저에서 맥의 코코아와 비슷한 위젯들을 쓸 수 있게 해주는 리치 클라이언트 라이브러리입니다.
+플러그인 필요없이 자바스크립트등 브라우저 기본 기능만 가지고 동작합니다.
+http://cappuccino.org
+
+280north 에서 개발하고 있습니다.
+http://280north.com/
+
+개발언어는 Objective-C 와 유사한 Objective-J 입니다.
+이를 보면 알 수 있겠지만 카푸치노는 Objective-C 를 사용하는 맥 OSX 개발자들을 염두에 두고 디자인된 프레임웍입니다.
+Objective-J 를 JavaScript 로 컴파일하는 도구들이 제공됩니다.
+Objective-J 도 280north 에서 개발하고 있습니다.
+
+문제는 카푸치노 문서화가 너무 부실하여 Hello World 제작 뿐만 아니라
+설치 자체도 현재 꽤 도전적 작업인 상태이기 때문에 왔다갔다하며 삽질하다보니 머리속이 뒤죽박죽이 되어가고 있습니다.
+
+어딘가 적어두지 않으면 진도가 나가지 않을 것 같아 이 메모를 시작합니다.
+하루 이틀 삽질하다가 던저버릴지도 모르겠지만.
+Edit
+drypot 2011-08-06 21:54
+카푸치노 사이트에 가면 Starter Package 를 받아서
+난데없이 Starter/bootstrap.sh 명령으로 먼가를 설치하라고 합니다.
+어떤 개발자가 머가 어디에 설치될지도 모르는데 저런 명령을 실행하겠습니까?
+
+그 아래에는 또, tusk 가 설치되어 있다면 tusk install --force cappuccino,
+이런 명령으로 설치할 수도 있다고 합니다.
+tusk 라고 들어보셨나요?
+
+이 모든 것에 대한 설명이 전혀 없습니다!
+이것을 이해하는데 며칠이 걸렸습니다. =,,=
+
+일단 Starter/bootstrap.sh 스크립트로 설치하는 위험해 보이는 방법은 피하기로 합니다.
+이러자면 어쩔 수 없이 추가 설명이 좀 필요합니다.
+Edit
+drypot 2011-08-06 22:39
+narwhal
+http://narwhaljs.org/
+
+280north 의 개발 도구들은 자바스크립트로 만들어져 있습니다.
+그래서 서버 사이드 자바스크립트를 실행시킬 환경이 필요합니다.
+
+이때 NodeJS 를 떠올릴 분들이 많을 것으로 생각되나 280north 는 자체적으로 자바스크립트 환경을 만들었습니다.
+이 자바스크립트 환경이 narwhal 이고, narwhal 에서 쓰는 패키지 메니저 명령이 tusk 입니다.
+
+NodeJS 의 IO 라이브러리가 Async 한데 반해 narwhal 의 IO 라이브러리들은 Sync 타입입니다.
+둘다 CommonJS 스팩을 준수하지만 패키지 관리 방법과 기본 라이브러리 등이 달라서 같은 자바스크립트 패키지라도 호환되진 않습니다.
+
+narwhal 의 자바스크립트 엔진은 NodeJS 처럼 고정이 아닙니다.
+rhino, v8, JavaScriptCore 등을 엔진을 바꿔가며 쓸 수 있도록 되어 있습니다. (만 잘 안 되었습니다. =,.=)
+
+기본으로 따라오는 자바스크립트 엔진은 rhino 입니다.
+rhino 는 자바로 구현된 자바스크립트 엔진입니다.
+그래서 기동이 무지 느립니다.
+
+v8 이나 맥 기본 JavaScriptCore 엔진을 붙여 쓸 수 있는 C 패키지가 github 에 있는데
+2011.08 월 시점에서 일년 정도 버려진 상태입니다.
+OS X Lion 에서 컴파일하는데 컴파일러 스위치도 문제고 수정해서 컴파일을 해도 Seg Fault 에러가. =,.=
+그래서 느리지만 기본 세팅된 rhino 를 쓰기로 했습니다. (또는 그럴 수 밖에 없습니다.)
+
+현재 narwhal 뉴스그룹 분위기는 먼가 다 뜯어 고쳐서 narwhal 2 를 만들자는 논의가 있습니다.
+이게 올 봄 이야기니 narwhal 이 제대로 돌기 위해서는 시간이 꽤 필요해 보입니다.
+주요 개발자들도 우왕좌왕하는 듯.
+
+그리고 패키지 메니징 모델도 NodeJS 의 NPM 에 비해 구형입니다.
+파이선의 버추얼 머신과 비슷.
+
+요컨데 narwhal 에 먼가 큰 기대를 걸 수 있는 상태가 아닙니다.
+딱 Cappuccino 만 잘 설치되고 작업할 수 있는 정도만 되어도 감지덕지.
+
+희망하는 바는 narwhal 걍 드롭하고 모두 NodeJS 로 이사해왔으면 하는데. =,=
+Edit
+drypot 2011-08-06 22:52
+narwhal 설치.
+
+brew 로도 설치가 되는데 디렉토리에 자주 방문해야 해서 git 로 홈 디렉토리에 수동 설치하기로 했습니다.
+git 가 필요한데 없으신 분들은 brew 로 git 를 먼서 설치하셔야 합니다.
+brew 도 없다면 brew 먼저. =,=
+
+cd  <-- 홈으로 갑니다.
+git clone git://github.com/280north/narwhal.git  <-- ~/narwhal 에 narwhal 을 설치합니다.
+
+쉘 PATH 에 아래를 추가합니다.
+~/narwhal/bin
+
+위 절차만 밟으면 별다른 빌드 없이 바로 js 명령을 사용할 수 있습니다.
+잘 되나 테스트 해봅니다.
+js narwhal/examples/hello
+
+자바로 만든 자바스크립트 엔진이라 뜨는데 오래 걸립니다. =,=
+Edit
+drypot 2011-08-06 22:59
+Cappuccino 설치.
+
+narwhal 이 깔릴때 js 명령과 함께 패키지 메니저인 tusk 쉘 스크립트도 narwhal/bin 에 같이 깔립니다.
+Cappuccino 는 tusk 로 설치합니다.
+
+tusk install --force cappuccino
+
+cappuccino, browserjs, jake, objective-j 등 디펜션트들도 함께 설치가 됩니다.
+jake 는 280north 에서 자바스크립트로 만든 빌드툴입니다. JS 판 Rake.
+
+설치가 완료되면 ~/narwhal/bin 에 capp 등 카푸치노 관련 명령들이 추가된 것이 보입니다.
+
+
+여기까지가 카푸치노 사이트에 빠져 있는 설치에 관한 내용들입니다.
+카푸치노를 어떻게 사용할 수 있는가는 저도 이제부터 써봐야 합니다. =,=
+위에 삽질하느라 며칠 소모. =,=
+
+http://www.capptutorials.net 등에 보면 다른 설치 방법들이 나와 있는데,
+위에 제 절차가 더 깨끗한 것 같습니다.

@@ -1,0 +1,93 @@
+H2
+drypot 2010-11-28 19:12
+2009.09.24
+
+하이버네이트 문서 보다가 H2 문서로 넘어 왔는데,
+예가 더비보다 더 좋은 것 같네,
+SQL 문도 더 이쁨,
+
+크기는 더비 절반, 1 메가, =,=
+
+흠, 1 메가 인데 관리자용 웹서버까지 들어 있네, 웹 페이지에 SQL 콘솔도 뜸,
+근데 여서 셧다운 시켰더니만 익셉션이 추륵, =,=
+
+걍 코멘드 라인만 써야겠다,
+
+더비는 먼가 잘못되고 있으면 설명이 참 상세하게 나오는데,
+H2 는 혼자 만들어서 그런지 머 아무 것도 출력 안 할 분위기,
+구글 코드 가보면 거의 혼자 코딩하시고 계심, =o=
+Edit
+drypot 2010-11-28 19:12
+2009.09.25
+
+케쉬를 글로벌 케쉬가 아니라 데이터베이스 오픈할 때마다 지정하게 되어 있음, 이게 멍미. =,=
+어플리케이션 두개 메모리 풀로 돌리고 있는 와중에 새 어플리케이션 추가하면 디비 할당해야 하는데,
+기존 어플리케이션에서 사용하는 디비 메모리 줄이려면 JDBC 접속 스트링 수정해야 하는데,
+그러면 어플리케이션 코드를 수정해야, =,=
+
+페이지 사이즈 조정하는 옵션도 안 보이네, 4 킬로 고정인가, =,=
+
+만든 아저씨한테 질문해놨는데, 흠,
+Edit
+drypot 2010-11-28 19:14
+2009.10.04
+
+CREATE LINKED TABLE LINK('org.postgresql.Driver', 'jdbc:postgresql:test', 'sa', 'sa', 'TEST')
+
+전혀 엉뚱한 디비를 저렇게 선언해서 쓸 수 있음.
+SQL Server 데이터 마이그레이션 하는 Groovy 코드 만들어 놨는데,
+저렇게 링크하고 H2 안에서 SQL 만 가지고 해봐야 겠다.
+
+참, MySQL 스토리지 엔진이 춘추전국이고 리눅스 아니면 테스트하기도 까다로와서 일단 접었음. =,=
+Java 디비로 충분히 되니 일단 쓰고 MySQL 은 리눅스에 익숙해 지고 나중에 고민을. =,=
+
+HSQLDB, 편의 기능이나 SQL 파서는 제일 좋은데 (스토어드 프로시저도 SQL 로 만들 수 있음)
+메모리 관리가 병맛이라 일단 제낌. =,=
+
+Derby, 메모리 관리가 그럴듯 한데,
+SQL 능력이 제일 딸리고 먼가 진행이 느려보임.
+H2 없어으면 더비 쓰고있을 듯.
+
+H2, HSQLDB 에 비해 SQL 편의성은 좀 떨어지나 어떤 아저씨 혼자 열심히 만들고 있는 것 같음.
+로드맵에 구현하고 싶은 희망사항을 한참 길게 적어 놓으셨는데 먼가 나하고 처지도 비슷하신 것 같아서. =,=
+page storage 아직 없는데 1 순위로 작업하고 계신다고 하고,
+HSQLDB 보다 메모리 운영이 그래도 조금 나음.
+메뉴얼에 군더더기가 없음. 160 페이지로 끝.
+
+대략 진짜 이상한 문제 없으면 당분간 H2 굳히기 하고 싶음.
+제발 뒤통수 치지 않았으면.
+Edit
+drypot 2010-11-28 19:15
+2009.10.05
+
+며칠 삽질 결과 슬릭정도 사이트 원만하게 돌릴정도의 인자들,
+
+시작 배치 파일
+start java -Xmx512m -cp c:\java\h2\bin\* org.h2.tools.Server -tcp -tcpPort 9092 -baseDir c:\h2\data
+
+셧다운 배치 파일
+java -cp c:\java\h2\bin\h2*.jar org.h2.tools.Server -tcpShutdown "tcp://localhost:9092" -tcpShutdownForce
+
+불안정한 기능 피해가고, 대략 원만한 JDBC URL
+MVCC 완전하지 않다고 해서 안 씀
+jdbc:h2:tcp://localhost:9092/sleek;IFEXISTS=TRUE;FILE_LOCK=SOCKET;AUTO_RECONNECT=TRUE
+
+디비 처음 만들고 한번 지정해주면 좋을 인자들 / 예네들은 한번 세팅하면 영구 보존됨
+SET DB_CLOSE_DELAY -1; -- 마지막 세션 끊어져도 디비 안 닫음
+SET CACHE_SIZE=131072; -- 디비 케쉬 크기 128 메가
+SET WRITE_DELAY 30000; -- 트렌젝션 로그 기록 딜레이 30 초, 이 와중에 서버 죽으면 커밋된거도 날라감
+SET MAX_LENGTH_INPLACE_LOB 4096000; -- VARCHAR 길어지면 템프 파일 만드는 버그 때문에 =,=
+SET PASSWORD ''; -- sa 계정 암호 지정
+
+데이터 왕창 로딩하는 세션에서 먼저 실행할만한 것들
+SET LOCK_MODE 0; -- disable locking
+SET LOG 0; -- disable the transaction log
+SET UNDO_LOG 0; -- disable the session undo log
+
+기타 유용할만한거
+SELECT * FROM INFORMATION_SCHEMA.SETTINGS -- 세팅 덤프
+
+데이터 깨졌을 때 쪼가리 데이터라도 SQL 스크립트로 덤프 뜨기
+java -cp h2*.jar org.h2.tools.Recover
+
+나머지는 모 일반적인 SQL 쓰면 됨.

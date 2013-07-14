@@ -1,6 +1,7 @@
 # Git ABC
 
 미래의 나를 위해 남기는 Git 메모;
+작업중입니다;
 
 - [Introduction](introduction.md)
 - [Install](install.md)
