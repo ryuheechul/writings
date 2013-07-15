@@ -1,4 +1,5 @@
-SATA Hot Swap 가능한가
+# SATA Hot Swap 가능한가
+
 2011-02-18 15:55
 
 SATA 드라이브 + AHCI 인터페이스 + 적절한 운영체제 드라이버 쓰면 Hot Swap 되는 것 처럼 보이는데,

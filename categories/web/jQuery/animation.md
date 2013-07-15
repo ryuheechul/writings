@@ -26,9 +26,11 @@
 	$(...).animate({properties}, speed, easing, fn);
 	$(...).animate({properties}, {options});
 
-	$(...).animate({ height: 300, 'border-width': 10, borderHeight: 10 }, 'slow', function() {		alert('The animation is finished.');	});
+	$(...).animate({ height: 300, 'border-width': 10, borderHeight: 10 }, 'slow', function() {
+		alert('The animation is finished.');
+	});
 	$(...).animate({ height: 'toggle' }, 'slow', fn);
-
+	
 	$(...).stop();
 	
 	if ($(...).is(':hidden')) { ... }

@@ -13,7 +13,12 @@
 	$(...).attr('height', '100');
 	$(...).removeAttr('height');
 	
-	$(...).attr({		rel: 'external',		id: function(index, oldValue) { // value callback. invoked once per element in the matched set.			return 'wikilink-' + index;		}	});
+	$(...).attr({
+		rel: 'external',
+		id: function(index, oldValue) { // value callback. invoked once per element in the matched set.
+			return 'wikilink-' + index;
+		}
+	});
 
 	// HTML attributes 와  DOM properties 는 이름이나 데이터형이 다를 수 있다.
 	// class vs. className, checked='checked' vs. checked: true

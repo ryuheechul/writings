@@ -1,5 +1,7 @@
-Mercurial
-drypot 2011-05-19 23:48
+# Mercurial
+
+2011-05-19 23:48
+
 http://mercurial.selenic.com/
 
 코딩 시작한지 30 년만에 처음 써보는 소스코드 버전 관리 시스템.
@@ -8,19 +10,19 @@ http://mercurial.selenic.com/
 맥용 패키지 제공하니 받아서 더블 클릭,
 설치 끝.
 
-cd project
-hg init <-- .hg 폴더 생성
-(add files)
-hg add <-- 신규 파일들 관리 목록에 올림
-hg commit
+	cd project
+	hg init <-- .hg 폴더 생성
+	(add files)
+	hg add <-- 신규 파일들 관리 목록에 올림
+	hg commit
 
-hg mv
-hg cp
-hg commit
+	hg mv
+	hg cp
+	hg commit
 
-hg log <-- 리비전 목록
-hg identify -n <-- 현재 리비전 확인
-hg update 3 <-- 특정 리비전으로 이동
+	hg log <-- 리비전 목록
+	hg identify -n <-- 현재 리비전 확인
+	hg update 3 <-- 특정 리비전으로 이동
 
 등등등,
 간단.

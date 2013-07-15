@@ -51,8 +51,9 @@
 	$('input[type="radio"]:checked');
 		
 	$('#news tr:has(td):not(:contains("topic"))');
-		$('#news').find('tr:has(td)').not(function() {		return $(this).children(':nth-child(4)').text() == 'topic';	});	
+	
+	$('#news').find('tr:has(td)').not(function() {
+		return $(this).children(':nth-child(4)').text() == 'topic';
+	});
 	
 	if ($(...).length) { ... } // if not empty
-		
-		
