@@ -1,6 +1,6 @@
 # Benefits of FP / 잇점
 
-2011-09-20 01:49
+2011-09-20
 
 http://www.defmacro.org/ramblings/fp.html
 

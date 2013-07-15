@@ -1,6 +1,6 @@
 # Lazy Evaluation / 지연 평가
 
-2011-09-24 16:52
+2011-09-24
 
 http://www.defmacro.org/ramblings/fp.html 
 

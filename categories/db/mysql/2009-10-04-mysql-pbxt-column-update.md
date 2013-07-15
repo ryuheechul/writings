@@ -1,19 +1,19 @@
-MySQL : PBXT 컬럼 업데이트
-drypot 2010-11-28 18:43
-2009.10.04
+# MySQL PBXT 컬럼 업데이트
+
+
+2009-10-04
 
 http://www.primebase.org
 
-근데 로그 베이스로 움직이면 한 컬럼만 업데이트 해도 전체 레코드 새로 쓰는건가, =,=
+로그 베이스로 움직이면 한 컬럼만 업데이트 해도 전체 레코드 새로 쓰는건가.
 왜 아무데도 언급이 없나. =,=
-Edit
-drypot 2010-11-28 18:48
+
+
 2010.02.05
 
-구글 님도 안 알려주시길레 제작자에게 콩글리쉬로 질문. =,=
-답 메일로 너무 자세히 알려주신 제작자님. =,=
+메일로 날아온 제작자분의 자세한 답 메일.
 
-*
+### 질문
 
 PBXT Question - Frequently updated column must be separated ?
 
@@ -43,7 +43,8 @@ Thank you.
 
 Kyuhyun Park.
 
-*
+
+### 답장
 
 Paul McCullagh
 
@@ -68,7 +69,8 @@ From this we can decide on the best approach.
 Best regards,
 Paul
 
-*
+
+### 재질문
 
 Thank you for your answer.
 
@@ -82,16 +84,16 @@ If there are any detailed blog or document about this, it will be helpful for me
 
 My current H2 (Java Database Engine) schema is like this :
 
-create table postThread (
-    postThread int auto_increment not null primary key,
-    category smallint not null,
-    hit int default 0 not null,
-    length smallint default 1 not null ,
-    cdate timestamp not null,
-    udate timestamp not null ,
-    userName varchar(32) not null,
-    title varchar(128) not null
-);
+	create table postThread (
+		postThread int auto_increment not null primary key,
+		category smallint not null,
+		hit int default 0 not null,
+		length smallint default 1 not null ,
+		cdate timestamp not null,
+		udate timestamp not null ,
+		userName varchar(32) not null,
+		title varchar(128) not null
+	);
 
 Last two columns are varyable size.
 userNames are 5~10 characters.
@@ -103,67 +105,58 @@ Thank you.
 
 Kyuhyun Park
 
-*
+
+### 재답장
 
 Hi Kyuhyun,
-
-On Feb 4, 2010, at 10:21 AM, Kyuhyun Park wrote:
-
-    Thank you for your answer.
-
-    sorry, but I cound not understand below two sentence clearly.
-    If there are any detailed blog or document about this, it will be helpful for me a lot :)
-
 
 I have done presentations on this that may help.
 Just search for PBXT on youtube. You can also check out my blog: pbxt.blogspot.com.
 And http://primebase.org/news.php has links to PDF versions of all presentations.
 
-    > The size of the fixed length part depends on the estimated average length of the row. If the maximum row length is within about 10% of the average row length, then no extended record record is used.
+> The size of the fixed length part depends on the estimated average length of the row. If the maximum row length is within about 10% of the average row length, then no extended record record is used.
 
 I created the table below.
-Then I executed CHECK TABLE postThread;
+Then I executed `CHECK TABLE postThread;`
 I the MySQL err log you will see the following output.
 
-CHECK TABLE: ./test/postThread
-Record buffer size      = 184
-Fixed length rec. len.  = 182
-Handle data record size = 196
-Min/max header size     = 14/14
-Min/avg/max record size = 28/165/188
-Avg row len set for tab = not specified
-Rows fixed length       = YES
-Maximum fixed size      = 16384
-Minimum variable size   = 320
-Minimum auto-increment  = 0
-Number of columns       = 8
-Number of fixed columns = 0
-Columns req. for index  = 1
-Rec len req. for index  = 4
-Columns req. for blobs  = 0
-Number of blob columns  = 0
-Number of indices       = 1
-Free record count       = 0
-Deleted record count    = 0
-Allocated record count  = 0
+	CHECK TABLE: ./test/postThread
+	Record buffer size      = 184
+	Fixed length rec. len.  = 182
+	Handle data record size = 196
+	Min/max header size     = 14/14
+	Min/avg/max record size = 28/165/188
+	Avg row len set for tab = not specified
+	Rows fixed length       = YES
+	Maximum fixed size      = 16384
+	Minimum variable size   = 320
+	Minimum auto-increment  = 0
+	Number of columns       = 8
+	Number of fixed columns = 0
+	Columns req. for index  = 1
+	Rec len req. for index  = 4
+	Columns req. for blobs  = 0
+	Number of blob columns  = 0
+	Number of indices       = 1
+	Free record count       = 0
+	Deleted record count    = 0
+	Allocated record count  = 0
 
-This line:
-Min/avg/max record size = 28/165/188
+This line: `Min/avg/max record size = 28/165/188`
 Indicates what PBXT says are the minimum, average and maximum row length, in bytes.
 165 is the average row length, which is an estimate, derived from the table definition.
 
 The following row:
-Rows fixed length = YES
+`Rows fixed length = YES`
 Indicates that PBXT will be using fixed length rows for your table. This means that an extended data record is not used. Which means that no garbage collection is required for this table!
 
- > Basically what this means is that if you have a "more or less" fixed length record then no extended record is written. This is ideal for records that are very frequently updated.
+> Basically what this means is that if you have a "more or less" fixed length record then no extended record is written. This is ideal for records that are very frequently updated.
 
 This is the case for your table postThread. Average is 165 bytes and maximum is 188 bytes. PBXT decides that there is not so much difference between the maximum and the average, and therefore it decides to use fixed length records.
 
 So the short answer to you original question is: Do not bother to split the table into 2, because there will be no garbage collection for the table.
 
 OPTIMIZATION:
--------------
 
 Now, if you like you can actually optimize this table further for PBXT.
 
@@ -173,26 +166,27 @@ userNames are 5~10 characters.
 titles are 15 ~ 20 chracters.
 If this is the case, then the average row size is 58 bytes not 165 as estimated by PBXT.
 
-58 = 188 - (32-10) - (128-20).
+	58 = 188 - (32-10) - (128-20).
 
 So, I can tell PBXT that I want to use a different average row size, as follows:
 
-create table postThread (
-   postThread int auto_increment not null primary key,
-   category smallint not null,
-   hit int default 0 not null,
-   length smallint default 1 not null ,
-   cdate timestamp not null,
-   udate timestamp not null ,
-   userName varchar(32) not null,
-   title varchar(128) not null
-) engine=pbxt avg_row_length=58;
+	create table postThread (
+		postThread int auto_increment not null primary key,
+		category smallint not null,
+		hit int default 0 not null,
+		length smallint default 1 not null ,
+		cdate timestamp not null,
+		udate timestamp not null ,
+		userName varchar(32) not null,
+		title varchar(128) not null
+	) engine=pbxt avg_row_length=58;
 
 You will see that this change:
-Handle data record size = 196
+`Handle data record size = 196`
 to
-Handle data record size = 72
+`Handle data record size = 72`
 
 This is good because it means the .xtd file will be much more compact (handle data records are the fixed length part of the record stored in the xtd file).
 But this means that if a record has userNames > 10 and titles > 20, then PBXT will create an extended record.
 However! Only a very small part of your data has longer userNames or titles, this is not a problem.
+

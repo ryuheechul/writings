@@ -1,6 +1,6 @@
 # Currying
 
-2011-09-22 01:58
+2011-09-22
 
 http://www.defmacro.org/ramblings/fp.html 
 

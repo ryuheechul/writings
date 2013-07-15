@@ -1,6 +1,6 @@
 # Higher Order Functions / 고차 펑션
 
-2011-09-20 20:34
+2011-09-20
 
 http://www.defmacro.org/ramblings/fp.html
 

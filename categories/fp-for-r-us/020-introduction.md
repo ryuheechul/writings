@@ -1,6 +1,6 @@
 # Introduction / 들어가는 글
 
-2011-09-14 08:07
+2011-09-14
 
 http://www.defmacro.org/ramblings/fp.html
 

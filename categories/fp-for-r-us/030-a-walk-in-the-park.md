@@ -1,6 +1,6 @@
 # A Walk In The Park / 산책
 
-2011-09-17 15:26
+2011-09-17
 
 http://www.defmacro.org/ramblings/fp.html
 

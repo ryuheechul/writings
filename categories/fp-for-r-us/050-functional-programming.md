@@ -1,6 +1,6 @@
 # Functional Programming
 
-2011-09-17 20:59
+2011-09-17
 
 http://www.defmacro.org/ramblings/fp.html
 

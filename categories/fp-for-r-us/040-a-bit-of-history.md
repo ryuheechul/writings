@@ -1,6 +1,6 @@
 # A Bit of History / 역사
 
-2011-09-17 19:29
+2011-09-17
 
 http://www.defmacro.org/ramblings/fp.html
 

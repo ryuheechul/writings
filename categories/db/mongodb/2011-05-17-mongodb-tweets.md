@@ -1,10 +1,8 @@
-Scratching MongoDB
-2011-05-17 14:01
+# MongoDB Tweets
 
 2011-05-17
 
-MongoDB The Definitive Guide 보면서 틈틈히 트윗들을 날렸는데 쭉 모아 봅니다.
-절반 봤고, 나머지 절반 보는 중.
+MongoDB The Definitive Guide 보면서 적었던 트윗들.
 
 어쩔 수 없이, 그냥 지나쳤다가는 계속 마음에 걸릴 듯 하여, MongoDB 리딩 시작. =,=
 

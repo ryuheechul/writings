@@ -1,6 +1,6 @@
 # Closures / 클로저, 묶음
 
-2011-09-26 23:47
+2011-09-26
 
 http://www.defmacro.org/ramblings/fp.html
 

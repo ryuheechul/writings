@@ -1,4 +1,6 @@
-Hibernate HSQL vs Spring Data Mongo
+# Hibernate HSQL vs Spring Data Mongo
+
+2011-12-21
 
 비슷한 기능을 하는 HSQL 과 Spring Data Mongo 코드의 비교.
 처음 나오는 코드가 HSQL, 다음 나오는 코드가 Spring Data 입니다.

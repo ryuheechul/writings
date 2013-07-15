@@ -1,6 +1,6 @@
 # Pattern Matching
 
-2011-09-26 21:47
+2011-09-26
 
 http://www.defmacro.org/ramblings/fp.html 
 

@@ -1,6 +1,6 @@
 # Continuations / 리턴을 다시 생각하다
 
-2011-09-26 20:37
+2011-09-26
 
 http://www.defmacro.org/ramblings/fp.html 
 
