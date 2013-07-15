@@ -1,4 +1,6 @@
-Natural Key vs Surrogate Key
+# Natural Key vs Surrogate Key
+
+2010-09-28
 
 당장 ORM 을 쓰지 않고 JDBC 나 iBatis 를 쓰더라도
 신규 디비 스키마를 만드시는 과정에서 아래 몇 가지만 지켜 주시면

@@ -1,4 +1,6 @@
-Cascasde
+# Cascasde
+
+2010-10-01
 
 엔터티들을 연관짓는 @OneToOne, @OneToMany 류 어노테이션에 Cascade 엘리먼트를 추가할 수 있습니다.
 디비의 foreign key 개념에 등장하는 그 Cascade 와 같습니다.

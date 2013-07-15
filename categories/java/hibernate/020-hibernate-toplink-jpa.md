@@ -1,5 +1,6 @@
-Hibernate, TopLink, JPA
-2010-09-11 17:07
+# Hibernate, TopLink, JPA
+
+2010-09-11
 
 Hibernate 이야기를 풀어가기 전에 EJB, Hibernate, TopLink, JPA, EclipseLink 간의 관계를 정리합니다.
 

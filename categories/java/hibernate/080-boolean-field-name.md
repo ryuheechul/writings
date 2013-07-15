@@ -1,4 +1,6 @@
-Boolean Field Name
+# Boolean Field Name
+
+2010-09-29
 
 boolean 타입 자바 필드와 디비 컬럼명에 관해.
 

@@ -1,4 +1,6 @@
-JUnit + Hibernate
+# JUnit + Hibernate
+
+2010-09-30
 
 도메인 오브젝트, DAO, 서비스 오브젝트 테스트 할 때,
 수작업 데이터 넣고 테스트하려면 어려우니

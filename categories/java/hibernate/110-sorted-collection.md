@@ -1,4 +1,6 @@
-Sorted Collection
+# Sorted Collection
+
+2010-09-30
 
 JPA 문서를 아무리 뒤져도 컬렉션 프로퍼티에 sql order by 지정하는 것이 없어 보이네요.
 JPA @OrderBy 라고 있는데 디비에서는 그냥 쌩으로 가져와서 메모리에서 소팅합니다. 쀅~

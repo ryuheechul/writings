@@ -1,4 +1,6 @@
-Element Collection
+# Element Collection
+
+2010-09-30
 
 일반적으로 엔터티에 컬렉션이 나타날 때는 두 엔터티가 OneToMany 관계에 있을 때 입니다.
 그런데 엔터티화 하지 않아도 되는 간단한 컬렉션들이 간혹 필요합니다.

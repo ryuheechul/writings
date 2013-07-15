@@ -1,4 +1,6 @@
-Entity Naming Convention
+# Entity Naming Convention
+
+2010-09-17
 
 하이버네이트가 자바 클래스명과 필드명을 디비의 테이블명과 컬럼명에 자동으로 매칭시키는데
 이 네이밍 변환에 다양한 전략 클래스를 꼽아 사용할 수 있습니다.

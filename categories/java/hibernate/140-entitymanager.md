@@ -1,4 +1,6 @@
-EntityManager
+# EntityManager
+
+2010-10-01
 
 엔터티 메니저에 중요한 메서드 간략이 적어둡니다.
 

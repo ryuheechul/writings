@@ -1,5 +1,7 @@
 NoTransaction Connection
 
+2010-10-01
+
 JDBC 에서 JPA  로 올 때 헷갈리는 점 / 궁금한 점이 있는데
 어떻게 JDBC 에서 하던대로 트랜잭션 없이 디비 입출력을 하는가 하는 것입니다.
 

@@ -1,4 +1,6 @@
-ManyToMany
+# ManyToMany
+
+2010-09-29
 
 Account 와 Role 처럼 ManyToMany 관계가 만들어질 때는
 중간에 릴레이션 테이블을 만들어 두개의 ManyToOne 으로 분해되도록 모델링을 합니다.

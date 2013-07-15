@@ -2,7 +2,7 @@
 
 [http://www.defmacro.org/ramblings/fp.html](http://www.defmacro.org/ramblings/fp.html)
 
-꽤 오래된 글인데 FP 입문자를 위해 중요 개념들을 잘 정리하고 있습니다. 좋은 글인데 한글판이 없어서 충동적으로 번역을 해봤습니다.
+꽤 오래된 글인데 FP 입문자를 위해 중요 개념들을 잘 정리하고 있습니다. 좋은 글인데 한글판이 없어서 번역을 해봤습니다.
 
 * [Introduction / 들어가는 글](020-introduction.md)
 * [A Walk In The Park / 산책](030-a-walk-in-the-park.md)
