@@ -1,5 +1,5 @@
-JSP
-drypot 2010-11-29 15:31
+# JSP
+
 2010.07.19
 
 JSP EL, JSTL, JSF 모두 Brain Dead Design 의 전형인듯.
@@ -11,8 +11,7 @@ JSP EL, JSTL, JSF 모두 Brain Dead Design 의 전형인듯.
 
 M$ 도 이제 버리려고 하는 ASP.NET 이벤트 모델 배껴서 JSF 만들었던데,
 걍 빨리 Razor 배껴서 JHTML 이나.
-Edit
-drypot 2010-11-29 15:31
+
 2010.08.08
 
 슬릭에 사용할 JSP 스타일
@@ -20,33 +19,33 @@ EL ,,, 즐~
 
 *
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.drypot.sleek.controller.*" %>
-<% HomeController cnt = (HomeController)request.getAttribute("cnt"); %>
-<!DOCTYPE html>
-<html>
-<body>
+	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+	<%@ page import="com.drypot.sleek.controller.*" %>
+	<% HomeController cnt = (HomeController)request.getAttribute("cnt"); %>
+	<!DOCTYPE html>
+	<html>
+	<body>
 
-<%= cnt.controllerName %><br>
-<%= cnt.now %><br>
-<%= cnt.rendered %>
+	<%= cnt.controllerName %><br>
+	<%= cnt.now %><br>
+	<%= cnt.rendered %>
 
-</body>
-</html>
-Edit
-drypot 2010-11-29 15:32
+	</body>
+	</html>
+
 2010.08.09
 
 클로저 없으니 진짜 깝깝하다. ㅋㅋ
 한 줄로 될꺼 클래스 뽑으면서 열 줄 넘게 만들어야하네. =,=
 
 Scala + Scalate
-= pager.html(p => url.postList(page = p))
+
+	= pager.html(p => url.postList(page = p))
 
 JSP
-<%= HtmlUtil.renderPager(out, cnt.pager, new Func<Integer, String>() { public String apply(Integer page) { return cnt.urls.getPostListUrl(page); }} ) %>
-Edit
-drypot 2010-11-29 15:35
+
+	<%= HtmlUtil.renderPager(out, cnt.pager, new Func<Integer, String>() { public String apply(Integer page) { return cnt.urls.getPostListUrl(page); }} ) %>
+
 2010.10.26
 
 EL 에 적응하려고 며칠 노력했음.
@@ -64,8 +63,9 @@ EL 싹다 들어냈음.
 먼가 명확해지고 속이다 후련하네.
 
 어느 똑똑한 용자가 Razor Java 버전 만들 때까지 이리 버텨야지.
-Edit
-drypot 2010-11-29 15:35
+
+2010-11-29
+
 JSP 에 코드가 있어야해.
 
 프리젠테이션 관련 로직이 컨트롤러에 있으면 문제가 너무 복잡해짐.

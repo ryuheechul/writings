@@ -1,5 +1,6 @@
-MVC Composite Form Object
-2010-11-01 15:05
+# MVC Composite Form Object
+
+2010-11-01
 
 Spring MVC Form 처리 기본 시나리오에서는 하나의 코멘드 오브젝트를 가정하고 있습니다.
 코멘드 오브젝트 이름은 `<form:form commandName="postForm"/>` 식으로 지정하게 되어 있고

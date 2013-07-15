@@ -1,4 +1,5 @@
-Tomcat Redirect to Static File
+# Tomcat Redirect to Static File
+
 2010-11-29 16:02
 
 이미지 서비스등에서 톰켓에서 인증등 적절한 로직을 통과한 다음

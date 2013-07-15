@@ -1,5 +1,5 @@
-Maven :Maven :
-drypot 2010-11-28 19:53
+# Maven
+
 2009.10.28
 
 Grails 빌드 시스템이 간단하긴 한데 먼가 좀 찜찜해서, =,=
@@ -14,8 +14,7 @@ Maven is Evil 로 구글했더니 먼가 많이 나오긴 하는데,
 계속 미궁 속으로 빠져들고 있음. =,=
 
 이클립스 IAM 설치하다가 시간 걸리길레 잠시 낙서. =,=
-Edit
-drypot 2010-11-28 19:53
+
 2009.11.19
 
 좋은 거는 라이브러리를 암 생각없이 땡겨 준다는거.
@@ -37,8 +36,7 @@ IDE 내장 Make 쓸라니 Maven 프로젝트 모델하고 IDEA 프로젝트 모�
 
 일단 내일 maven 문서 좀 읽고
 쓸때 없는 스테이지 다 날려서 속도 얼마나 올릴 수 있나 봐야겠음, =,=
-Edit
-drypot 2010-11-28 19:54
+
 2009.11.19
 
 쉽게 쉽게 가는 것이 맞는데,
@@ -48,15 +46,17 @@ Grails 만든 사람이 maven 은 build 계의 EJB2 다라고 욕하던데 모 �
 오늘 까정은 한번 계속 뒤벼보다가 정 답 안 나오면 쉬운 방법을 써야할 듯.
 
 maven lifecycle 커스터마이징 하는 방법을 찾았는데, 좀 무지 귀찮겠음, =,=
+
 http://www.sonatype.com/people/2009/08/create-a-customized-build-process-in-maven/
 
 더불어 maven 동물책을 공짜로 주고 있다, 오 좋은 사람들 같음.
+
 http://sonatype.com/products/maven/documentation/book-defguide
-Edit
-drypot 2010-11-28 19:54
+
 2009.11.19
 
 MVC 나 기타 등등 프레임웍들 처럼 메이븐도 라이브사이클 틀에 구조적인 문제점이.
+
 http://portals.apache.org/jetspeed-2/maven/the-need-for-a-custom-lifecycle.html
 
 X 윈도우 시스템 시절부터
@@ -64,8 +64,7 @@ X 윈도우 시스템 시절부터
 거 왠만하면 맞는 것 같음.
 
 라이브러리만 세팅하게 하고 걍 IDEA 메이크 써야할 듯. =,=
-Edit
-drypot 2010-11-28 19:56
+
 2009.12.23
 
 http://netbeans.org/kb/docs/java/maven-dependencies-screencast.html
@@ -76,8 +75,7 @@ http://netbeans.org/kb/docs/java/maven-dependencies-screencast.html
 ant 에서는 copy 같은거 한 줄로 되더만 maven 에서 copy 한번 하려면 후덜덜,
 
 IDE 들 이상하게 Ivy 기본 제공을 안 해준다.
-Edit
-drypot 2010-11-28 19:57
+
 2010.01.23
 
 maven 시작한지 3 개월만에 드뎌 좀 익숙해졌음.
@@ -103,8 +101,7 @@ Intellij 빌드 시스템 쓸 수 없는 것이 groovyc 에 좀 짜증나는 버
 maven 으로 돌리면 java stub 만들면서 저 버그 사라진는 것 같음.
 
 이 문제 스칼라로 이사가서 없어지면 좀 편하게 작업할 수 있을 듯.
-Edit
-drypot 2010-11-28 19:58
+
 2010.01.24
 
 maven 때문에 얻은 생각지도 않은 장점은
@@ -130,9 +127,9 @@ NetBeans 에서는 maven 툴 윈도우 같은거 지원 안 하고,
 build 에 compile war:inplace 지정해 두면 한큐에 바료 호출. 아주 편함.
 
 소나타입에서 공짜로 뿌리는 책들.
+
 http://www.sonatype.com/documentation/books
-Edit
-drypot 2010-11-28 19:59
+
 2010.01.29
 
 소나타입에서 나온 Maven 문서들을 일독하였는데,
@@ -166,7 +163,7 @@ NetBeans 의 Run/AutoRedeploy 기능이 동작을 안 합니다.
 근데 다행스럽게도 NetBeans 에 프로젝트의 타입 힌트를 줄수가 있습니다.
 아래 프로퍼티를 profiles.xml 에 넣어줍니다.
 
-<netbeans.hint.packaging>war</netbeans.hint.packaging>
+	<netbeans.hint.packaging>war</netbeans.hint.packaging>
 
 모든 문제가 해결되었습니다 !!! ^^
 POM 파일은 딱 두개만 만들어서 깔끔해졌고,
@@ -175,8 +172,7 @@ Web Project 를 Run 하면 Logic Project 가 알아서 만들어지고 끌려들
 NetBeans 는 Web Project 를 war 타입으로 인식해서 자동 디플로이하고 실행해줍니다.
 Scala 경우 소스 고치고 다시 F6 누르면,
 Java 경우 소스 고치고 Save 만 하면, 자동으로 디플로이 됩니다.
-Edit
-drypot 2010-11-28 19:59
+
 2010.03.11
 
 Maven 노우하우가 계속 쌓이면 좀씩 계속 쉬워지고 있음.
@@ -198,8 +194,7 @@ Scala 컴파일러 관련해서 몇 줄 적어주면 컴파일러 세트 알아�
 Jetty 도 몇 줄 적어주면 알아서 끌고와 웹서버 기동됨. =o=
 
 자바 jar 관리하는게 너무 빡쳐서, Maven 없으면 진짜 지지.
-Edit
-drypot 2010-11-28 20:00
+
 2010.05.02
 
 이해할 수록 참 잘 만든거 같음.
@@ -237,47 +232,44 @@ maven pom 이 계승, 콤포지션이 다 되서...
 mvn package 하면 출력 깔끔하게 나옴.
 재 사용 가능한 부분은 모두 엄마한데. 2 단계로 나나놨음.
 
-<project
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+		<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>fa</groupId>
-		<artifactId>scala-web</artifactId>
+		<parent>
+			<groupId>fa</groupId>
+			<artifactId>scala-web</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<relativePath>../../../maven/scala-web</relativePath>
+		</parent>
+
+		<artifactId>sleek-web</artifactId>
+		<packaging>pom</packaging>
 		<version>1.0-SNAPSHOT</version>
-		<relativePath>../../../maven/scala-web</relativePath>
-	</parent>
 
-	<artifactId>sleek-web</artifactId>
-	<packaging>pom</packaging>
-	<version>1.0-SNAPSHOT</version>
+		<name>sleek-web</name>
 
-	<name>sleek-web</name>
+		<properties>
+			<maven.test.skip>true</maven.test.skip>
+		</properties>
 
-	<properties>
-		<maven.test.skip>true</maven.test.skip>
-	</properties>
+		<dependencies>
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-core</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-analyzers</artifactId>
+			</dependency>
+		</dependencies>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-analyzers</artifactId>
-		</dependency>
-	</dependencies>
+	</project>
 
-</project>
-Edit
-drypot 2010-11-28 20:01
-.
-Edit

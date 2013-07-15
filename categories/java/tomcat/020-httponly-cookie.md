@@ -1,5 +1,5 @@
-HttpOnly Cookie
-2010-11-29 12:56
+# HttpOnly Cookie
+
 2010.05.25
 
 Servlet 3.0 JSR 읽다보니 HttpOnly Cookie 스펙이 있다.

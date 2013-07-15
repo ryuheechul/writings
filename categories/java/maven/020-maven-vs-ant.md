@@ -1,5 +1,5 @@
-Maven : Maven vs Ant
-drypot 2010-11-29 13:00
+# Maven vs Ant
+
 2010.05.27
 
 http://kent.spillner.org/blog/work/2009/11/14/java-build-tools.html
@@ -10,8 +10,7 @@ http://kent.spillner.org/blog/work/2009/11/14/java-build-tools.html
 
 pom.xml 하나면 끝나서 넷빈, 아이디어, 이클립스 옮겨다니며 쓰기도 참 좋았는데.
 아이디어에 정착잘 되고 있으니 Ant 나 좀 네이티브하게 가볼까.
-Edit
-drypot 2010-11-29 13:02
+
 2010.06.25
 
 ant + ivy 사고에 완전히 적응한 것은 아닌데,
@@ -26,8 +25,7 @@ configuration 의 승리. =,=
 
 먼가 좀 더 초고속으로 컴파일 할 수 있을 것 같은데,
 궁리를,,, =,=
-Edit
-drypot 2010-11-29 13:03
+
 2010.06.30
 
 프로젝트를 여러개로 좀 쪼개려고 하니 Any + Ivy 조합은 너무 지저분해진다. =,=

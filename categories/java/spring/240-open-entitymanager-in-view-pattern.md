@@ -1,4 +1,6 @@
-Open EntityManager in View Pattern
+# Open EntityManager in View Pattern
+
+2010-09-30
 
 일반적으로 하이버네이트 세션은 `@Transaction` 안에서만 살아 있습니다.
 JPA 식으로 말하면 트랜젝션이 끝나면 엔터티 메니저가 닫혀버립니다.

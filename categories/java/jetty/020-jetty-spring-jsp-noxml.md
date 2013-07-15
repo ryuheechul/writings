@@ -1,4 +1,5 @@
-Jetty + Spring + JSP + NoXML
+# Jetty + Spring + JSP + NoXML
+
 2011-09-05 16:38
 
 고민의 시작은 사용법 괴상한 Tomcat 을 버리자는 것 하나.

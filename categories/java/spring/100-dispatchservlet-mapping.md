@@ -1,5 +1,6 @@
-DispatcherServlet Mapping
-2010-10-25 11:39
+# DispatcherServlet Mapping
+
+2010-10-25
 
 ### DispatcherServlet 매핑 문제
 

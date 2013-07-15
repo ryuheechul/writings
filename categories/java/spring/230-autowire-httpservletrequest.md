@@ -1,5 +1,6 @@
-Autowire HttpServletRequest
-2010-10-19 18:11
+# Autowire HttpServletRequest
+
+2010-10-19
 
 Session 스콥 빈 선언을 어떻게 하는지는 아래 글에서 적었었습니다.
 아래 예처럼 클래스를 정의하고 @Autowired 하면 되었었습니다.

@@ -1,5 +1,7 @@
-Maven : 쌩뚱 맞은 jar 파일 추가
-drypot 2010-11-29 16:14
+# Maven : 쌩뚱 맞은 jar 파일 추가
+
+2010-11-29
+
 메이븐 센트럴 리포지터리에 있는 jar 는 디펜던시 설정하면 잘 끌려옵니다.
 그런데 대한민국의 결제 루틴 같은 쌩뚱 맞은 jar 는 리포지터리에 없기 때문에 평범하게 가져올 수가 없습니다.
 
@@ -10,6 +12,6 @@ drypot 2010-11-29 16:14
 그룹아이디, 아티펙트아이디, 버전은 적당히.
 패키징은 jar 라고 하시면 될 것 같군요.
 
-mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
+	mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
 
 http://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html

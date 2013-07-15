@@ -1,5 +1,6 @@
-Bean Initialization with ServletContext
-2010-11-30 10:41
+# Bean Initialization with ServletContext
+
+2010-11-30
 
 일반적으로 스프링 빈에서 `ServletContext` 가 필요할 때는
 `ServletContextAware` 인터페이스를 구현해 인젝션 받으면 됩니다.

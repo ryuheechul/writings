@@ -1,12 +1,14 @@
-Tomcat URI Encoding
+# Tomcat URI Encoding
+
 2010-11-29 16:06
-<Connector
-    port="8080"
-    protocol="org.apache.coyote.http11.Http11NioProtocol"
-    maxPostSize="536870912"
-    URIEncoding="UTF-8"
-    enableLookups="false"
-/>
+
+	<Connector
+	    port="8080"
+	    protocol="org.apache.coyote.http11.Http11NioProtocol"
+	    maxPostSize="536870912"
+	    URIEncoding="UTF-8"
+	    enableLookups="false"
+	/>
 
 데이터를 URL 인자로 보낼 때,
 특정 Character Encoding 의 스트링을, 브라우저가 URL Encoding 으로 싸서 보내는데,

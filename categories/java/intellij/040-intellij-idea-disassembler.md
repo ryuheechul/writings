@@ -1,6 +1,7 @@
-Intellij IDEA : 디스어셈블러 연결하는 법
-drypot 2011-08-30 14:53
-원문
+# Intellij IDEA : 디스어셈블러 연결하는 법
+
+2011-08-30
+
 http://arhipov.blogspot.com/2011/08/whats-cool-in-intellijidea-part-iii.html?spref=tw
 
 요약하면,

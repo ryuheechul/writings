@@ -1,5 +1,6 @@
-Autowire Form Object to Request Scope Bean
-2010-10-28 16:32
+# Autowire Form Object to Request Scope Bean
+
+2010-10-28
 
 아래와 같은 핸들러 메서드가 있을 때,
 

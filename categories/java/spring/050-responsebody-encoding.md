@@ -1,5 +1,6 @@
-ResponstBody Encoding
-2010-10-04 15:00
+# ResponstBody Encoding
+
+2010-10-04
 
 컨트롤러 메서드에 `@ResponseBody` 를 붙여서
 리턴 String 을 HttpResponse 로 자동으로 만들도록 할 수가 있었습니다.

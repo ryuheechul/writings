@@ -1,5 +1,6 @@
-MVC Model Parameter BestPractice
-2010-11-04 18:31
+# MVC Model Parameter BestPractice
+
+2010-11-04
 
 책에서 보셨을 것인데요 컨트롤러에서 모델을 뷰로 넘기는데 관여하는 타입들이 여러가지 있습니다.
 `ModelAndView`, `Model`, `Map`, `ModelMap` 등이 있습니다.

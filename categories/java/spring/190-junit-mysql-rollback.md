@@ -1,5 +1,6 @@
-Spring + JUnit + MySQL + Rollback
-2010-11-17 13:42
+# Spring + JUnit + MySQL + Rollback
+
+2010-11-17
 
 Spring Transactional 사용하는 JUnit 테스트 모듈에서 Database 작업을 할 때는
 기본적으로 테스트 케이스 종료와 함께 Rollback 이 이루어진다.

@@ -1,51 +1,50 @@
-Lucene
-drypot 2010-11-29 13:46
+# Lucene
+
 2009.11.27
 
 슬릭 데이터 몽땅 인덱싱하는 셈플
 
-import org.apache.lucene.analysis.Analyzer
-import org.apache.lucene.analysis.cjk.CJKAnalyzer
-import org.apache.lucene.util.Version
-import org.apache.lucene.store.Directory
-import org.apache.lucene.store.NIOFSDirectory
-import org.apache.lucene.index.IndexWriter
-import org.apache.lucene.index.IndexWriter.MaxFieldLength
-import org.apache.lucene.document.Document
-import org.apache.lucene.document.Field
-import groovy.sql.Sql
+	import org.apache.lucene.analysis.Analyzer
+	import org.apache.lucene.analysis.cjk.CJKAnalyzer
+	import org.apache.lucene.util.Version
+	import org.apache.lucene.store.Directory
+	import org.apache.lucene.store.NIOFSDirectory
+	import org.apache.lucene.index.IndexWriter
+	import org.apache.lucene.index.IndexWriter.MaxFieldLength
+	import org.apache.lucene.document.Document
+	import org.apache.lucene.document.Field
+	import groovy.sql.Sql
 
-Analyzer analyzer = new CJKAnalyzer(Version.LUCENE_CURRENT)
-Directory directory = new NIOFSDirectory(new File("c:/app/sleek-lucene/post"))
-IndexWriter writer = new IndexWriter(directory, analyzer, true, MaxFieldLength.LIMITED)
+	Analyzer analyzer = new CJKAnalyzer(Version.LUCENE_CURRENT)
+	Directory directory = new NIOFSDirectory(new File("c:/app/sleek-lucene/post"))
+	IndexWriter writer = new IndexWriter(directory, analyzer, true, MaxFieldLength.LIMITED)
 
-Sql sql = Sql.newInstance("jdbc:h2:tcp://localhost:9092/sleek;IFEXISTS=TRUE;FILE_LOCK=SOCKET;LOCK_MODE=0","sa","----")
+	Sql sql = Sql.newInstance("jdbc:h2:tcp://localhost:9092/sleek;IFEXISTS=TRUE;FILE_LOCK=SOCKET;LOCK_MODE=0","sa","----")
 
-println "indexing postThead"
-sql.eachRow ("select * from postThread") { postThread ->
-	Document doc = new Document()
-	doc.add(new Field("postThread", (String)postThread.postThread, Field.Store.YES, Field.Index.NOT_ANALYZED))
-	doc.add(new Field("userName", (String)postThread.userName, Field.Store.YES, Field.Index.NOT_ANALYZED))
-	doc.add(new Field("title", (String)postThread.title, Field.Store.NO, Field.Index.ANALYZED))
-	writer.addDocument(doc)
-}
+	println "indexing postThead"
+	sql.eachRow ("select * from postThread") { postThread ->
+		Document doc = new Document()
+		doc.add(new Field("postThread", (String)postThread.postThread, Field.Store.YES, Field.Index.NOT_ANALYZED))
+		doc.add(new Field("userName", (String)postThread.userName, Field.Store.YES, Field.Index.NOT_ANALYZED))
+		doc.add(new Field("title", (String)postThread.title, Field.Store.NO, Field.Index.ANALYZED))
+		writer.addDocument(doc)
+	}
 
-println "indexing post"
-sql.eachRow ("select * from post where postThread") { post ->
-	Document doc = new Document()
-	doc.add(new Field("post", (String)post.post, Field.Store.YES, Field.Index.NOT_ANALYZED))
-	doc.add(new Field("postThread", (String)post.postThread, Field.Store.YES, Field.Index.NOT_ANALYZED))
-	doc.add(new Field("userName", (String)post.userName, Field.Store.YES, Field.Index.NOT_ANALYZED))
-	doc.add(new Field("text", (String)post.text, Field.Store.NO, Field.Index.ANALYZED))
-	writer.addDocument(doc)
-}
+	println "indexing post"
+	sql.eachRow ("select * from post where postThread") { post ->
+		Document doc = new Document()
+		doc.add(new Field("post", (String)post.post, Field.Store.YES, Field.Index.NOT_ANALYZED))
+		doc.add(new Field("postThread", (String)post.postThread, Field.Store.YES, Field.Index.NOT_ANALYZED))
+		doc.add(new Field("userName", (String)post.userName, Field.Store.YES, Field.Index.NOT_ANALYZED))
+		doc.add(new Field("text", (String)post.text, Field.Store.NO, Field.Index.ANALYZED))
+		writer.addDocument(doc)
+	}
 
-writer.optimize()
-writer.close()
+	writer.optimize()
+	writer.close()
 
-println "done"
-Edit
-drypot 2010-11-29 13:47
+	println "done"
+
 2009.12.03
 
 Lucene in Action 이 나온지가 좀 오래되서 현재 API 들하고 틀린 내용이 많은 것 같음.
@@ -56,8 +55,7 @@ PDF 기준으로 인덱스 추가와 업데이트를 같은 오브젝트로 못�
 최근 FAQ 읽어보니 다행히 추가 + 업데이트 한 오브젝트가 할 수 있게 몰아 놓은 것 같음.
 
 리딩 끝났으니 코딩을 좀 해봐야할 듯.
-Edit
-drypot 2010-11-29 13:49
+
 2009.12.04
 
 H2 는 이번에 페이징 모델로 바뀌더니만, 100 메가 먹던 데이터 파일이 260 메가 먹고 있음. =,=
@@ -88,8 +86,7 @@ OLTP 환경에서 쓰기는 먼가 어수선함. ^^
 
 그래도 전반적으로는 훌륭한 것 같음.
 검색이 많이 좋아졌음.
-Edit
-drypot 2010-11-29 13:50
+
 2009.12.04
 
 autocommit 은 왜 빼버렸을까.
@@ -104,8 +101,7 @@ commit 은 완전 수동으로 불러야함. =,=
 
 Compass 인가 루신 레퍼가 있는데 불안해서, =,=
 걍 수작업 몇 뼘해야.
-Edit
-drypot 2010-11-29 13:50
+
 2010.08.14
 
 며칠전에 Lucene in Action 2nd Edition PDF 나왔군.

@@ -1,5 +1,6 @@
-Autowire HttpServletResponse
-2011-09-08 13:21
+# Autowire HttpServletResponse
+
+2011-09-08
 
 `HttpServletRequest` 는 쉽게 Autowire 해서 사용할 수 있지만 `HttpServletResponse` 는 Autowire 할 수가 없습니다.
 1 년 전엔 귀찮아서 안 했었는데 Code-based Configuration 방식으로 관련 클래스와 설정을 한 곳에 몰아서

@@ -1,5 +1,5 @@
-Intellij IDEA :
-drypot 2010-11-29 14:08
+# Intellij IDEA
+
 2009.11.12
 
 이클립스도 훌륭한데 Groovy Plugin 에 딸려오는 Groovy Editor 가 버그 땜시 종종 다운 됨. =,=

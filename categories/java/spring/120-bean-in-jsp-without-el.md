@@ -1,5 +1,6 @@
-Beans in JSP without EL
-2010-10-28 16:11
+# Beans in JSP without EL
+
+2010-10-28
 
 ### EL 보다 Native Java
 

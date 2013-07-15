@@ -1,5 +1,6 @@
-Hello, Spring MVC + Eclipse + Maven
-2010-09-01 13:47
+# Hello, Spring MVC + Eclipse + Maven
+
+2010-09-01
 
 ### 프로젝트 생성
 

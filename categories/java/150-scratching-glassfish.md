@@ -1,5 +1,5 @@
-Glassfish
-drypot 2010-11-28 18:29
+# Glassfish
+
 2009.12.18
 
 Java EE 6 / Glassfish v3 정식 나와서 설치함.
@@ -18,15 +18,13 @@ Tomcat 이 관리가 너무 이상함. =,=
 
 젤 많이 쓰고 중요한 부분인데 Tomcat 은 너무 방치된 것 같음. 누가 깡그리 정리를 좀 해줬으면.
 얼핏보니 톰켓 첨에 만든 아저씨 Ruby 하러 도망갔다고 하는 것 같던데. =,=
-Edit
-drypot 2010-11-28 18:30
+
 2009.12.25
 
 JBoss, WebLogic, WebSphere 같은 놈들은 못 써봐서 비교 평가는 못하겠고,
 걍 GlassFish 만 놓고 봤을때 기본 기능 충분하고 관리 도구들 충실해서 만족중.
 Java 웹 개발할 때 괜히 Jetty / Tomcat 쓰면서 고생할 필요 없어진 것 같음.
-Edit
-drypot 2010-11-28 18:32
+
 2009.12.26
 
 https://glassfish.dev.java.net/ 여기서 배포하는 glassfish 에는 API Javadoc 이 없다. =,=

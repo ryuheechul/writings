@@ -1,5 +1,6 @@
-Code-based Configuration For Spring MVC
-2011-08-29 01:15
+# Code-based Configuration For Spring MVC
+
+2011-08-29
 
 Spring 3.1.0.M2 부터 기존에 사용하던 스프링 XML 설정 파일들을 거의 쓰지 않을 수 있게 되었습니다.
 

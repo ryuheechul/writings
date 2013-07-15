@@ -1,5 +1,7 @@
-Intellij IDEA : 장점
-drypot 2010-11-29 15:41
+# Intellij IDEA : 장점
+
+2010-11-29
+
 Java + JSP 의 완벽한 결합, 리펙터링.
 Java 코드 바꾸면 JSP 코드까지 자동 변경.
 JSP 에서 import 정리하는 기능.

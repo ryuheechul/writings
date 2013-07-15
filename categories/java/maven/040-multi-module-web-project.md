@@ -1,5 +1,7 @@
-Maven : Multi-Module Web Project
-drypot 2010-11-29 16:08
+# Multi-Module Web Project
+
+2010-11-29
+
 사이트 작업이 커지면 로직을 위한 자바 코드는 별도 프로젝트(모듈)로 분리하게 됩니다.
 이클립스에서는 이 단위를 프로젝트가 칭하고 Maven 이나 IDEA 에서는 모듈이라 칭하는데,
 문맥에 따라서 이해해주세요.
@@ -18,43 +20,41 @@ drypot 2010-11-29 16:08
 참고하고 있는 다른 메이븐 프로젝트가 워크스페이스 상에 별견됐을 시
 그것을 이클립스 프로젝트 정보로 매핑해주니까
 일반적인 이클립스 개발 사이클을 타면 됩니다.
-Edit
-drypot 2010-11-29 16:08
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<groupId>net.directmedia</groupId>
-	<artifactId>mvc-demo-logic</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+		<modelVersion>4.0.0</modelVersion>
 
-	<dependencies>
-	</dependencies>
+		<groupId>net.directmedia</groupId>
+		<artifactId>mvc-demo-logic</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<packaging>jar</packaging>
 
-</project>
+		<dependencies>
+		</dependencies>
+
+	</project>
 
 로직을 담을 jar 모듈을 정의하는 pom.xml 예입니다.
-Edit
-drypot 2010-11-29 16:09
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<groupId>net.directmedia</groupId>
-	<artifactId>mvc-demo</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	<packaging>war</packaging>
+		<modelVersion>4.0.0</modelVersion>
 
-	<dependencies>
-		<dependency>
-			<groupId>net.directmedia</groupId>
-			<artifactId>mvc-demo-logic</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
+		<groupId>net.directmedia</groupId>
+		<artifactId>mvc-demo</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<packaging>war</packaging>
 
-</project>
+		<dependencies>
+			<dependency>
+				<groupId>net.directmedia</groupId>
+				<artifactId>mvc-demo-logic</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+
+	</project>
 
 위 로직 모듈을 불러쓰는 웹 사이트 프로젝트 예제.
 메이븐 상식대로 그룹, 아티펙트, 버전을 적어주면,
@@ -62,8 +62,7 @@ drypot 2010-11-29 16:09
 
 더 군다나 좋은 것은 이 이클립스 프로젝트 정보가 톰켓 플러그인까지 흘러가니까,
 별도 클래스패스 지정하지 않고도 로직 모듈 관련 클래스들이 이클립스 톰켓에 다 링크됩니다.
-Edit
-drypot 2010-11-29 16:09
+
 메이븐으로 패키징을 한다면
 로직 모듈에 대해 install 을 해서 로컬 리포지터리에 jar 를 설치한 후
 웹 프로젝트에 대해 package 를 해야 메이븐이 로직 모듈을 찾습니다.

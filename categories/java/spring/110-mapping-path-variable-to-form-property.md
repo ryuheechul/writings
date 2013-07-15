@@ -1,5 +1,6 @@
-Mapping Path Variable to Form Property
-2010-10-26 11:15
+# Mapping Path Variable to Form Property
+
+2010-10-26
 
 패스 변수를 폼 프로퍼티에 매핑할 수 있을까요? 그러니까,
 

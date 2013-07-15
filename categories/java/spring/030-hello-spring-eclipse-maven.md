@@ -1,5 +1,6 @@
-Hello, Spring + Eclipse + Maven
-2010-08-24 17:55
+# Hello, Spring + Eclipse + Maven
+
+2010-08-24
 
 스프링을 맛보기 할 수 있는 초 짧은(?) 절차다.
 Eclipse 3.5 기준으로 작성된 글이므로 이후 버전에선 차이가 있을 수 있다.

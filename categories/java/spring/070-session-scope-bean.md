@@ -1,5 +1,6 @@
-Session Scope Bean
-2010-10-15 18:24
+# Session Scope Bean
+
+2010-10-15
 
 Setvlet API 로 HTTP 세션을 구현하면
 `Request` 에서 `getSession` 으로 `Session` 오브젝트 받아서 맵 타입으로 데이터를 넣고 뺍니다.

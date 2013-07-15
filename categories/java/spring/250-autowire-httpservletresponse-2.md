@@ -1,4 +1,6 @@
-Autowire HttpServletResponse 2
+# Autowire HttpServletResponse 2
+
+2010-10-19
 
 전에 HttpServletResponse 를 인젝션하는 코드를 블로그에 올렸었는데 Session Scope Bean 에도 인젝션할 수 있도록 수정하였습니다. 과정에서 코드도 간단해졌습니다.
 

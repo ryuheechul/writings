@@ -1,5 +1,5 @@
-Wicket
-drypot 2010-11-28 19:00
+# Wicket
+
 2010.02.12
 
 Wicket in Action 보고 있는 중
@@ -9,47 +9,50 @@ Wicket in Action 보고 있는 중
 p12
 
 For instance, with Wicket you’ll never code anything like the following (JSP) fragment:
-<table>
-	<tr>
-		<c:forEach var="item" items="${sessionScope.list}">
-			<td>
-				<c:out value="item.name" />
-			</td>
-		</c:forEach>
-	</tr>
-</table>
+
+	<table>
+		<tr>
+			<c:forEach var="item" items="${sessionScope.list}">
+				<td>
+					<c:out value="item.name" />
+				</td>
+			</c:forEach>
+		</tr>
+	</table>
 
 Nor will you see code like the following Apache Velocity fragment:
-<table>
-	<tr>
-		#foreach ($item in $sessionScope.list)
-			<td>
-				${item.name}
-			</td>
-		#end
-	</tr>
-</table>
+
+	<table>
+		<tr>
+			#foreach ($item in $sessionScope.list)
+				<td>
+					${item.name}
+				</td>
+			#end
+		</tr>
+	</table>
 
 Nor will it look like the following JSF fragment:
-<h:dataTable value="#{list}" var="item">
-	<h:column>
-		<h:outputText value="#{item.name}"/>
-	</h:column>
-</h:dataTable>
+
+	<h:dataTable value="#{list}" var="item">
+		<h:column>
+			<h:outputText value="#{item.name}"/>
+		</h:column>
+	</h:dataTable>
 
 With Wicket, the code looks like this:
-<table>
-	<tr>
-		<td wicket:id="list">
-			<span wicket:id="name" />
-		</td>
-	</tr>
-</table>
+
+	<table>
+		<tr>
+			<td wicket:id="list">
+				<span wicket:id="name" />
+			</td>
+		</tr>
+	</table>
 
 만든 사람 철학이 좋은 프레임웍인 것 같음.
 문제의 본질이 먼지 잘 알고 있는 듯.
-Edit
-drypot 2010-11-28 19:01
+
 2010.02.13
 
 참 신기하게 동작함.

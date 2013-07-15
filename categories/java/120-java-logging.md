@@ -1,4 +1,5 @@
-Java Logging
+# Java Logging
+
 2010-11-29 18:31
 
 자바 환경에서 로깅 시스템이 좀 복잡합니다.
