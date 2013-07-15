@@ -1,4 +1,5 @@
-Classes and Objects, Semicolon Inference
+# Classes and Objects, Semicolon Inference
+
 2011-07-14 22:09
 
 ### Semicolon inference / 세미콘롤 추론

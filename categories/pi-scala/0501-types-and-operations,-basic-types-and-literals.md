@@ -1,4 +1,5 @@
-Types and Operations, Basic Types and Literals
+# Types and Operations, Basic Types and Literals
+
 2011-07-17 16:38
 
 (이 장은 상식적인 내용이니 짧게 쓰고 넘어가기로 한다.)

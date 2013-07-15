@@ -1,4 +1,5 @@
-Scala Is Statically Typed
+# Scala Is Statically Typed
+
 2011-07-08 21:08
 
 (번역하면서 삽입한 원전에 없던 문장은 앞으로 괄호로 묶어 놓겠습니다.)

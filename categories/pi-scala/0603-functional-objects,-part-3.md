@@ -1,4 +1,5 @@
-Functional Objects, Part 3
+# Functional Objects, Part 3
+
 2011-07-21 01:21
 
 ### Private fields and methods / 비공개 필드와 메서드

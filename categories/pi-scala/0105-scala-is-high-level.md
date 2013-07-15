@@ -1,4 +1,5 @@
-Scala Is High-Level
+# Scala Is High-Level
+
 2011-07-08 00:17
 
 ### Scala Is High-Level / 스칼라는 추상적이다.

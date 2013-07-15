@@ -1,4 +1,5 @@
-First Steps, foreach, for
+# First Steps, foreach, for
+
 2011-07-08 23:44
 
 인식하지 못했을 수도 있겠지만 이전 단계에서는 while 루프를 사용해서 절차적 방식(imperative style)으로 프로그래밍 해보았다.

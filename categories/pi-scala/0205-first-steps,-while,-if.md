@@ -1,4 +1,5 @@
-First Steps, while, if
+# First Steps, while, if
+
 2011-07-08 23:27
 
 다음을 printargs.scala 파일에 입력하고 while 문을 사용해보자.

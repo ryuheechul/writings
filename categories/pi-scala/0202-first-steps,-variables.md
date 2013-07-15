@@ -1,4 +1,5 @@
-First Steps, Variables
+# First Steps, Variables
+
 2011-07-08 22:58
 
 스칼라에는 두 가지 종류의 변수가 존재한다. val 과 var.

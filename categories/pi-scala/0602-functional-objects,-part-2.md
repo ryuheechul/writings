@@ -1,4 +1,5 @@
-Functional Objects, Part 2
+# Functional Objects, Part 2
+
 2011-07-20 00:19
 
 ### Adding fields / 필드 추가

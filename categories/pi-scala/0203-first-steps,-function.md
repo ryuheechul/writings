@@ -1,4 +1,5 @@
-First Steps, Function
+# First Steps, Function
+
 2011-07-08 23:17
 
 펑션은 아래 와 같이 만들 수 있다.

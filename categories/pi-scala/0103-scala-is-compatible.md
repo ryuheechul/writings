@@ -1,4 +1,5 @@
-Scala Is Compatible
+# Scala Is Compatible
+
 2011-07-07 23:04
 
 ### Scala Is Compatible / 스칼라는 호환성을 갖는다

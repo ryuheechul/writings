@@ -1,7 +1,6 @@
-Programming In Scala 번역
-2011-07-07 15:34
+# Programming In Scala 번역
 
-2011 년 7 월 7 일
+2011-07-07
 
 ... 전략 ...
 

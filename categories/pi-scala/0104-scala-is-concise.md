@@ -1,4 +1,5 @@
-Scala Is Concise
+# Scala Is Concise
+
 2011-07-07 23:23
 
 ### Scala Is Concise / 스칼라는 간결하다
