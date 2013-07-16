@@ -1,5 +1,7 @@
-Ubuntu 10.04 Software Raid
-drypot 2010-12-10 19:08
+# Ubuntu 10.04 Software Raid
+
+2010-12-10 19:08
+
 몇 달전에 썼던 글입니다.
 몇 가지 필요에 의해서 게시.
 

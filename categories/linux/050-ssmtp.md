@@ -1,4 +1,5 @@
-ssmtp
+# ssmtp
+
 2011-02-23 16:33
 
 mdadm monitor 같은 로컬 서비스들이 메일을 보내려면

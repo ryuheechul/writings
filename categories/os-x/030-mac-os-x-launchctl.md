@@ -1,5 +1,7 @@
-Mac OS X 데몬
-drypot 2011-05-18 19:06
+# Mac OS X 데몬
+
+2011-05-18 19:06
+
 맥에서 데몬 띄우는 방법 학습겸 개발용 맥북에서 mongodb 데몬 설정을 해봤습니다.
 
 OS X 에는 /etc/init.d 가 없습니다.
@@ -33,40 +35,40 @@ man launch.plist <-- 데몬 설정 파일 문법
 파일 내용은 아래와 같습니다.
 각 필드의 값은 여러분의 몽고 설치위치에 따라 바꿔쓰세요.
 
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-	<dict>
-		<key>Label</key>
-		<string>local.mongodb</string>
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+	<plist version="1.0">
+		<dict>
+			<key>Label</key>
+			<string>local.mongodb</string>
 
-		<key>WorkingDirectory</key>
-		<string>/Users/drypot/mongodb</string>
+			<key>WorkingDirectory</key>
+			<string>/Users/drypot/mongodb</string>
 
-		<key>ProgramArguments</key>
-		<array>
-			<string>mongodb/bin/mongod</string>
-			<string>--dbpath</string>
-			<string>data</string>
-			<string>--bind_ip</string>
-			<string>localhost</string>
-			<string>--smallfiles</string>
-		</array>
+			<key>ProgramArguments</key>
+			<array>
+				<string>mongodb/bin/mongod</string>
+				<string>--dbpath</string>
+				<string>data</string>
+				<string>--bind_ip</string>
+				<string>localhost</string>
+				<string>--smallfiles</string>
+			</array>
 
-		<key>KeepAlive</key>
-		<true/>
+			<key>KeepAlive</key>
+			<true/>
 
-		<key>RunAtLoad</key>
-		<true/>
+			<key>RunAtLoad</key>
+			<true/>
 
-	</dict>
-</plist>
+		</dict>
+	</plist>
 
 launchd 설정 파일들은 시스템 부팅시나 로그인 시에만 읽혀지니
 위 파일을 만들고 나서는 수작업으로 로딩을 시켜야 합니다.
 아래 명령을 실행합니다.
 
-launchctl load ~/Library/LaunchAgents/local.mongodb.plist
+	launchctl load ~/Library/LaunchAgents/local.mongodb.plist
 
 설정 파일에 문법 오류가 없다면 아무 소리 없이 데몬이 뜰껍니다.
 먼가 오타가 있으면 plist 를 발견 못했다는 이상한 메시지가 나옵니다. =o=

@@ -1,5 +1,7 @@
-Windows 7 와 Mac OS X 파일 공유
-drypot 2011-03-04 23:11
+# Windows 7 와 Mac OS X 파일 공유
+
+2011-03-04 23:11
+
 Windows 7 에서는 파일 서버에 인증하는데 NTLMv2 와 128 비트 암호화를 사용하기 때문에
 Mac OS X (현재 버전 10.6.6) 의 SMB 방식 공유 폴더에 접근할 수가 없습니다.
 
@@ -34,8 +36,9 @@ To get around this:
 10.	Network Security: Minimum session security for NTLM SSP Based (including secure RPC) Clients
 11.	Change the setting from "require 128 bit" to unchecked (No Minimum)
 12.	Click OK
-Edit
-drypot 2011-05-07 17:21
+
+2011-05-07 17:21
+
 위 방법으로도 맥 폴더에 접근 안 된다는 전언이 있었습니다.
 사실 저도 직접 해보지 않고 글만 가지고 온 것이라 죄송합니다.
 

@@ -1,4 +1,5 @@
-Mac OS X Filename Encoding
+# Mac OS X Filename Encoding
+
 2011-01-24 02:46
 
 OS X 는 파일 이름을 UTF8 로 저장한다.

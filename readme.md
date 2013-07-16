@@ -4,6 +4,11 @@
 * [jQuery](categories/web/jquery/readme.md)
 * [Functional Programming For The Rest of Us](categories/fp-for-r-us/readme.md)
 * [Programming in Scala](categories/pi-scala)
+* [Node.js](categories/node)
+* [Linux](categories/linux)
+
+>
+
 * [Spring](categories/java/spring)
 * [Hibernate](categories/java/hibernate)
 

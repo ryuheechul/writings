@@ -1,4 +1,5 @@
-HDD 4 KiB Sector Issue
+# HDD 4 KiB Sector Issue
+
 2011-02-16 17:18
 
 한줄 요약, 4KiB 섹터 쓰는 신형 하드를 아무 생각 없이 파티셔닝하면 속도가 3 배 느려집니다.

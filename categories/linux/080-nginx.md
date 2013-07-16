@@ -1,4 +1,5 @@
-nginx
+# Nginx
+
 2010.09.16
 
 <http://news.netcraft.com/> 페이지 아래 그래프 보시면
