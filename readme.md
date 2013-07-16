@@ -2,13 +2,10 @@
 
 * [Git](categories/git/readme.md)
 * [jQuery](categories/web/jquery/readme.md)
-* [Functional Programming For The Rest of Us](categories/fp-for-r-us/readme.md)
-* [Programming in Scala](categories/pi-scala)
 * [Node.js](categories/node)
+* [Functional Programming For The Rest of Us](categories/fp-for-r-us/readme.md)
 * [Linux](categories/linux)
-
->
-
+* [Programming in Scala](categories/pi-scala)
 * [Spring](categories/java/spring)
 * [Hibernate](categories/java/hibernate)
 
