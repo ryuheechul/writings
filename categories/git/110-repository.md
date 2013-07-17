@@ -1,36 +1,71 @@
 # Repository
 
-워킹 디렉토리는 현재 수정중인 파일들의 디렉토리다.
 
-리포지터리는 워킹 디렉토리의 커밋들이 쌓이는 디렉토리다.
-워킹 디렉토리 루트에 만들어지는 '.git' 가 리포지터리다.
+### 새 로컬 리포지터리 생성
 
-Git 는 분산 VCS 이므로 리포지터리 클론이 가능하다.
-Git 설정 파일은 각 로컬에 독립적이어서 클론되지 않는다.
+워킹 디렉토리에 새 리포지터리를 생성할 수 있다. 
 
-
-### 새 리포지터리 생성
-
-워킹 디렉토리로 이동해서 리포지터리를 생성한다. 
-`.git` 라는 디렉토리가 생긴다.
-
-	$ cd <project directory>
+	$ cd test-project
 	$ git init
+
+`.git` 라는 디렉토리가 생겼다.
 	
+	$ ls -d .git
+	.git
 
-### 클론 리포지터리 생성
 
-리모트 리포지터리를 클론하면 리모트를 등록하고 트래킹 브랜치를 만드는 작업을 한번에 할 수 있다.
-리모트 리포지터리의 기본 이름은 `origin` 이 된다.
+### GitHub 리포지터리를 클론
 
-	$ git clone <remote url>
-	$ git clone <remote url> <target directory>
+https://github.com 나 https://bitbucket.org 등의 서비스에 리포지터리를 생성하고 여기에 내 코드를 공개할 수 있다.
 
-아래와 대충 비슷.
+리모트 리포지터리를 사용하려면 로컬 리포지터리와 연결해야하는데
+리모트 리포지터리를 먼저 생성하고 내 컴퓨터에 클론하는 방식이 살짝 더 쉽다.
 
-	$ mkdir <target directory>
-	$ cd <target directory>
-	$ git init
-	$ git remote add origin <remote url>
-	$ git fetch origin
-	$ git checkout -b master origin/master
+각 사이트의 안내에 따라 리모트 리포지터리를 생성한다.
+
+test-project 라는 리모트 리포지터리를 생성했다면 아래 명령으로 로컬에 클론을 생성할 수 있다. 
+
+	$ git clone https://github.com/drypot/test-project.git
+
+무엇인가 당장 푸쉬해 보고 싶다면 일단 아무 파일이나 만들어서
+
+	$ cd test-project
+	$ touch readme.md
+
+만든 파일을 인덱스에 등록하고
+
+	$ git add readme.md
+
+커밋한 다음
+
+	$ git commit -m "first commit"
+
+리모트에 푸쉬한다.
+
+	$ git push
+
+리모트 리포지터리에 가보면 방금 만든 파일이 등록되어 있다.
+
+
+### 기존 로컬 리포지터리를 GitHub 에 연결
+
+이미 로컬 리포지터리가 존재하는 경우에도 리모트 리포지터리에 푸쉬할 수 있다.
+
+위와 동일한 방법으로 각 사이트의 안내에 따라 리모트 리포지터리를 생성한다.
+
+이번엔 리모트를 클론하는 대신 로컬에 리모트 이름과 주소를 등록한다.
+프로젝트 이름이 test-project 라 가정하면,
+
+	$ cd test-project
+	$ git remote add origin https://github.com/drypot/test-project.git
+
+리포트 리포지터리를 origin 이란 이름으로 등록하였다. 모든 리모트 리포지터리는 이름을 가져야한다.
+
+이제 로컬 리포지터리 내용을 리모트에 푸쉬할 수 있다. master 는 푸쉬할 브랜치명이다.
+
+	$ git push -u origin master
+
+ `-u` 옵션으로 트래킹 설정이 한번 되면 다음 부터는 아래와 같이 옵션 없이 푸쉬할 수 있다.
+
+	$ git push 
+

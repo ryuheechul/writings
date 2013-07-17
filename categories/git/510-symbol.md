@@ -1,6 +1,6 @@
-`# Git Symbol
+# Git Symbol
 
-### 심볼
+## 심볼
 
 Git 를 쓰다보면 많은 커밋 오브젝트를 만들게 되는데 20 자리 16진수 이름을 직접다루는 것은 불편하다.
 그래서 해쉬 이름을 대신하는 심볼 (symref, Symbolic reference) 을 사용한다.

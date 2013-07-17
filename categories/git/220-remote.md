@@ -114,3 +114,26 @@ bare 리포지터리는 오브젝트 스토어만 있을 뿐 워킹 디텍토리
 
 	$ git push <remote> :<remote branch>
 
+### 클론 리포지터리 생성
+
+리모트 리포지터리를 클론할 수 있다.
+
+	$ git clone https://github.com/drypot/about.git
+	$ git clone https://github.com/drypot/about.git some-other-dir-name
+
+위 명령은 아래 절차를 수작업하는 것과 대충 비슷한데 자세한 내용은 Remote 절을 참고한다.
+
+	$ mkdir about
+	$ cd about
+	$ git init
+	$ git remote add origin https://github.com/drypot/about.git
+	$ git fetch origin
+	$ git checkout -b master origin/master
+
+
+리모트 리포지터리를 클론하면 리모트를 등록하고 트래킹 브랜치를 만드는 작업이 한번에 이루어 지는데
+
+
+리모트 리포지터리의 기본 이름은 `origin` 이 된다.
+
+

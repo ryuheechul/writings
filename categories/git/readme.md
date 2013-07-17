@@ -23,4 +23,9 @@
 >
 
 - [Symbol](510-symbol.md)
+- [Alias](520-alias.md)
+- [Ignore Files](530-ignore.md)
+
+>
+
 - [Help](910-help.md)
