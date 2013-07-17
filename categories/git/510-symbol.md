@@ -53,3 +53,7 @@ MERGE_HEAD, merge 중 merge 하고 있는 다른 브랜치의 HEAD 가 MERGE_HEA
 
 	$ git ls-remote <remote>
 
+
+심볼릭 이름에 대한 커밋 ID 를 찾을 수 있다.
+
+	$ gir rev-parse <symbolic commit name>

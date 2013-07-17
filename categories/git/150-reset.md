@@ -1,4 +1,4 @@
-# Git Reset
+# Reset
 
 Checkout 과 다르게 Commit 기록 자체를 날림.
 

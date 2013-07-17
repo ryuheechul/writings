@@ -13,6 +13,7 @@
 - [Index](120-index.md)
 - [Commit](130-commit.md)
 - [Checkout](140-checkout.md)
+- [Show](145-show.md)
 - [Reset](150-reset.md)
 
 >
@@ -22,7 +23,9 @@
 
 >
 
+- [Repository Structure](505-structure.md)
 - [Symbol](510-symbol.md)
+- [Tag](515-tag.md)
 - [Alias](520-alias.md)
 - [Ignore Files](530-ignore.md)
 
