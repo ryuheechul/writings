@@ -4,7 +4,7 @@
 
 점차 글로벌하게 3 단계의  설정 파일이 존재한다.
 
-	.git/config          # default
+	.git/config         # default
 	~/.gitconfig        # with the --global option
 	/etc/gitconfig      # with the --system option
 
