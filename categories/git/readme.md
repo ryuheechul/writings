@@ -1,25 +1,26 @@
 # Git ABC
 
-미래의 나를 위해 남기는 Git 메모;
+미래의 나를 위해 남기는 Git 메모;  
 작업중입니다;
 
-- [Introduction](introduction.md)
-- [Install](install.md)
-- [Config](config.md)
+- [Introduction](010-introduction.md)
+- [Install](020-install.md)
+- [Config](030-config.md)
 
 >
 
-- [Repository](repository.md)
-- [Index](index.md)
-- [Commit](commit.md)
-- [Checkout](checkout.md)
-- [Reset](reset.md)
+- [Repository](110-repository.md)
+- [Index](120-index.md)
+- [Commit](130-commit.md)
+- [Checkout](140-checkout.md)
+- [Reset](150-reset.md)
 
 >
 
-- [Branch](branch.md)
-- [Remote](remote.md)
+- [Branch](210-branch.md)
+- [Remote](220-remote.md)
 
 >
 
-- [Symbol](symbol.md)
+- [Symbol](510-symbol.md)
+- [Help](910-help.md)
