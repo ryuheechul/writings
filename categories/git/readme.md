@@ -24,7 +24,7 @@
 >
 
 - [Repository Structure](505-structure.md)
-- [Symbol](510-symbol.md)
+- [Reference](510-reference.md)
 - [Tag](515-tag.md)
 - [Alias](520-alias.md)
 - [Ignore Files](530-ignore.md)
