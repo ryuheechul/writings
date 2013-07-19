@@ -2,7 +2,8 @@
 
 ### 사용자명 등록
 
-Git 를 사용하기에 앞서 앞으로 생성할 커밋들의 사용자명을 등록해둔다.
+Git 를 사용하기에 앞서 사용자명을 등록해야한다.
+사용자명은 커밋에 기록된다.
 
 	$ git config --global user.name “drypot”                        
 	$ git config --global user.email “drypot@gmail.com”
@@ -12,7 +13,7 @@ Git 를 사용하기에 앞서 앞으로 생성할 커밋들의 사용자명을 
 
 설정파일은 3 단계로 존재한다.
 
-	.git/config         # default
+	./.git/config         # default
 	~/.gitconfig        # with the --global option
 	/etc/gitconfig      # with the --system option
 
