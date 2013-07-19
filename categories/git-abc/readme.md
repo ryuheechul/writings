@@ -17,9 +17,6 @@
 - [Checkout](140-checkout.md)
 - [Show](145-show.md)
 - [Reset](150-reset.md)
-
->
-
 - [Branch](210-branch.md)
 - [Remote](220-remote.md)
 
