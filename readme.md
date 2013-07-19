@@ -1,9 +1,9 @@
 # Some Technical Writings
 
-* [Git ABC](categories/git-abc/readme.md)
-* [jQuery](categories/web/jquery/readme.md)
+* [Git ABC](categories/git-abc)
+* [jQuery](categories/web/jquery)
 * [Node.js](categories/node)
-* [Functional Programming For The Rest of Us](categories/fp-for-r-us/readme.md)
+* [Functional Programming For The Rest of Us](categories/fp-for-r-us)
 * [Linux](categories/linux)
 * [Programming in Scala](categories/pi-scala)
 * [Spring](categories/java/spring)
