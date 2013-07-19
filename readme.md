@@ -1,6 +1,6 @@
 # Some Technical Writings
 
-* [Git](categories/git/readme.md)
+* [Git ABC](categories/git-abc/readme.md)
 * [jQuery](categories/web/jquery/readme.md)
 * [Node.js](categories/node)
 * [Functional Programming For The Rest of Us](categories/fp-for-r-us/readme.md)
