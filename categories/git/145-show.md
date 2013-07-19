@@ -10,10 +10,16 @@
 
 	$ git show 1e9321f
 
+### Show Catalog
+
+커밋에 저장된 파일 목록을 볼 수 있다.
+
+	$ git ls-tree master
+
 
 ### Show File
 
-특정 커밋의 파일 내용을 볼 수 있다.
+커밋의 파일 내용을 볼 수 있다.
 
 	$ git show origin/master:Makefile
 	$ git show HEAD~4:src/main.c
