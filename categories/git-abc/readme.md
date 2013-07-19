@@ -1,7 +1,9 @@
 # Git ABC
 
-미래의 나를 위해 남기는 Git 메모;  
-작업중입니다;
+2011.09.29 ~
+
+마음에 드는 입문자용 Git 문서가 안 보여 쓰기 시작.  
+쉽게, 유용하게, 간결하게, 
 
 - [Introduction](010-introduction.md)
 - [Install](020-install.md)
