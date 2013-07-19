@@ -107,7 +107,7 @@ develop 브랜치를 master 에 머지한다.
 	
 	$ git reset --hard ORIG_HEAD
 
-머지 명령전에 HEAD 가 ORIG_HEAD 에 백업되는 것을 이용하였다.
+머지 명령이 HEAD 를 ORIG_HEAD 에 백업하는 것을 이용하였다.
 
 
 ### 머지 정책
