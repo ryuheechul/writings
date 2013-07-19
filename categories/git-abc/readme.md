@@ -15,7 +15,7 @@
 - [Reset](150-reset.md)
 - [Branch](160-branch.md)
 - [Checkout](170-checkout.md)
-- [Merge](180-branch.md)
+- [Merge](180-merge.md)
 - [Remote](190-remote.md)
 
 >
