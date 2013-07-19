@@ -5,5 +5,5 @@
 	$ git config --global alias.show-graph 'log --graph --abbrev-commit --pretty=oneline'
 
 이렇게 사용할 수 있다.
-	
+
 	$ git show-graph

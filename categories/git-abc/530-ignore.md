@@ -4,7 +4,7 @@
 
 컴파일러 중간 파일등 버전관리가 필요가 없는 파일들은 `.gitignore` 파일에서 지정한다.
 
-서브디렉토리의 `.gitignore` 는 상위 디렉토리의 `.gitignore`을 오버라이딩한다. 
+서브디렉토리의 `.gitignore` 는 상위 디렉토리의 `.gitignore`을 오버라이딩한다.
 
 `.gitignore` 파일은 자동으로 `git add` 되지 않으니 수동으로 넣어야한다.
 
@@ -15,7 +15,7 @@
 
 	# 파일 이름만 써놓으면 모든 디렉토리에서 해당 파일을 무시한다.
 	ignore-me-everywhere.txt
-	
+
 	# OSX 에서는 폴터 관리 파일도 무시하자.
 	.DS_Store
 
@@ -34,6 +34,6 @@
 
 ## .git/info/exclude
 
-로컬 리포지터리에만 적용하고 싶은 예외 규정은 `.git/info/exclude` 에서 설정한다.  
+로컬 리포지터리에만 적용하고 싶은 예외 규정은 `.git/info/exclude` 에서 설정한다.
 리포지터리 클론시 복사되지 않는다.
 

@@ -1,28 +1,30 @@
 # Commit
 
-인덱스 내용을 리포지터리에 저장한다.
+커밋은 인덱스에 등록한 파일들의 스냅샷을 리포지터리에 저장한다.
 
 ### Commit
 
-현재 인덱스 내용을 커밋한다. `-m` 옵션은 필수다.
+커밋한다. `-m` 옵션은 필수다.
 
 	$ git commit -m “first commit”
 
+
 ### Commit All
 
-`-a` 옵션으로 수정된 파일들의 인덱싱과 커밋을 한번에 할 수도 있다.  
-즉 `git add + git commit` 이다.  
+수정된 파일들의 인덱싱과 커밋을 한번에 할 수 있다.
+즉 `git add + git commit` 이다.
+새로 생성한 파일은 자동 등록되지 않는다.
 
 	$ git commit -a -m “commit all modified” 
 
 ### Commit Amend
 
-바로 이전 커밋에 파일을 추가하거나 메시지를 수정할 수 있다.
+바로 이전 커밋에 파일을 추가할 수 있다.
 
 	$ git commit --amend
 
 
-### Show History
+### Show Commit Log
 
 커밋 히스토리를 보여준다.
 
