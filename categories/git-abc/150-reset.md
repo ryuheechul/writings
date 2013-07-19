@@ -1,7 +1,6 @@
 # Reset & Revert
 
 Checkout 은 워킹 디렉토리로 Commit 을 꺼내오긴 하지만 Commit 기록 자체를 변경하진 않는다.  
-HEAD 만 변경된다.
 
 Reset 은 Branch Head 를 과거로 되돌려 커밋 자체를 삭제한다.
 
