@@ -75,7 +75,7 @@ JCL 1.3, 2.0 버전 개발은 사실상 정지되었고요,
 
 해서, 현재 로깅 관련 패키지들은 아래 처럼 됩니다.
 
-Facade API : SLF4J, JCL
+Facade API : SLF4J, JCL  
 Real Logging Engine : Logback, Log4J, JUL
 
 ### 결론
