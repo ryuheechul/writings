@@ -68,7 +68,7 @@ RAID 1 타입
 
 	mdadm --create --verbose /dev/md0 --metadata 1.2 --level=mirror --raid-devices=2 /dev/sd[ab]
 
-RAID6 타입
+RAID 6 타입
 
 	mdadm --create --verbose /dev/md0 --metadata 1.2 --level=6 --raid-devices=4 /dev/sd[abcd]
 
@@ -128,7 +128,7 @@ Personalities 는 커널이 지원하는 RAID 레벨들 표시.
 
 어레이 정보
 
-	mdadm -- detail /dev/md1
+	mdadm --detail /dev/md1
 
 디스크 슈퍼블럭 정보
 
