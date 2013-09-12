@@ -26,10 +26,13 @@ Ctrl-a d 연속해서 치시면 스크린 세션이 detatch 됩니다.
 어제 보던 화면이 다시 나타갈 겁니다.
 
 screen 화면을 더 만드시려면,
-Ctrl-A c
+
+	ctrl-a c
 
 screen 화면간에 이동하시려면,
-Ctrl-A n
+
+	ctrl-a n
 
 스크린에 심취하시려면
-man screen
+
+	man screen

@@ -1,13 +1,15 @@
 # Some Technical Writings
 
 * [Git ABC](categories/git-abc)
-* [jQuery](categories/web/jquery)
+* [jQuery](categories/jquery)
 * [Node.js](categories/node)
 * [Functional Programming For The Rest of Us](categories/fp-for-r-us)
 * [Linux](categories/linux)
+* [Linux Disk](categories/linux-disk)
+* [Linux Raid](categories/linux-raid)
 * [Programming in Scala](categories/pi-scala)
-* [Spring](categories/java/spring)
-* [Hibernate](categories/java/hibernate)
+* [Java Spring](categories/java/spring)
+* [Java Hibernate](categories/java/hibernate)
 
 
 # License
