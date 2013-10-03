@@ -2,7 +2,7 @@
 
 ![](maps/map-05.jpg)
 
-이 날은 문경에서 상주 상풍교 포인트까지 20 킬로 진도 나갔다. 지도에서 경유1 지점.
+이날은 문경에서 상주 상풍교 포인트까지 20 킬로 진도 나갔다. 지도에서 경유1 지점.
 
 [https://vine.co/v/hr9hemLmb1M](https://vine.co/v/hr9hemLmb1M)
 
