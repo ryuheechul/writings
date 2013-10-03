@@ -3,8 +3,8 @@
 무식하고 용감하게, 자전거 사고 7 일만에 국토종주를 해보았다.
 
 * [브롬톤](bromton.md)
-
 * [국수역까지](01-guksu.md)
+* [여행준비](prepare.md)
 * [부론면까지](02-buron.md)
 * [충주까지](03-chungju.md)
 * [문경까지](04-mungyeong.md)
