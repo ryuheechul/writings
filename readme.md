@@ -13,8 +13,6 @@
 
 >
 
-* [자전거 타고 국토종주](categories/bike/seoul-to-busan/readme.md)
-
 # License
 
 The MIT License (MIT)
