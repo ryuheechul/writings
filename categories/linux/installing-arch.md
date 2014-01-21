@@ -1,6 +1,6 @@
 # Installing Arch
 
-업데이트 일자: 2014.01.21
+2014.01.21
 
 [https://wiki.archlinux.org/index.php/Beginners'_Guide](https://wiki.archlinux.org/index.php/Beginners%27_Guide)
 
