@@ -2,6 +2,11 @@
 
 업데이트 일자: 2014.01.21
 
+[https://wiki.archlinux.org/index.php/Beginners'_Guide](https://wiki.archlinux.org/index.php/Beginners%27_Guide)
+
+아치 리눅스를 서버용으로 세팅하는 과정을 적은 가이드이다.
+순서대로 읽으며 진행하면 된다.
+
 ## Arch Linux
 
 [https://www.archlinux.org](https://www.archlinux.org)
@@ -19,6 +24,7 @@
 [https://www.archlinux.org/download/](https://www.archlinux.org/download/)
 
 아치 이미지는 32, 64 비트를 동시에 지원한다.
+
 새 시스템을 설치하려면 반드시 인터넷에 접속된 상태여야한다.
 
 ## Partitioning
@@ -29,12 +35,13 @@
 
 [https://wiki.archlinux.org/index.php/Swap](https://wiki.archlinux.org/index.php/Swap)
 
-기가단위 램 있는 시스템은 불필요하다.
-클라이언트용 시스템에서 suspend-to-disk 쓰려면 필요하다.
+기가단위로 램이 있는 시스템은 스웝이 불필요하다.
+
+클라이언트용 시스템에서 suspend-to-disk 쓸 경우는 필요하다.
 
 ### BIOS + MBR
 
-시스템 하드는 GPT 대신 걍 MBR 쓰는 것이 인생이 편하다.
+시스템 하드는 GPT 대신 MBR 쓰는 것이 편한 것 같다.
 
 MBR 의 프라이머리 파티션은 4 개 까지.
 MBR 이 다룰 수 있는 최대 크기는 2 TB.
@@ -66,10 +73,7 @@ MBR 은 fdisk 로 생성한다.
 
 왠만하면 쓰지 않는다.
 
-그래도 쓰겠다면,
-
-Post MBR gap 이 없기 때문에 GRUB core.img 를 심을 별도의 부트 파티션이 필요하다.
-
+그래도 쓰겠다면 Post MBR gap 이 없기 때문에 GRUB core.img 를 심을 별도의 부트 파티션이 필요하다.
 부트 파티션 위치는 2 TiB 안이면 되지만 가능하면 디스크 앞쪽에 1007 KiB 크기로 만든다.
 1007 KiB + 맨앞 17 KiB GPT 하면 딱 1024 KiB 이 된다.
 
@@ -102,9 +106,9 @@ EFS 타입은 ef00 이다.
 Arch 에서 권장하는 EFS 크기는 512 MiB 이다.
 윈도우는 100 MiB 쓴다고 한다.
 
-파티션 생성후 FAT으로 포멧한다.
+EFS 파티션 생성후엔 FAT으로 포멧한다.
 
-	# mkfs.fat -F32 /dev/<THAT_PARTITION>
+	# mkfs.fat -F32 /dev/<partition>
 	
 ### Btrfs Partitioning
 
@@ -126,11 +130,11 @@ Swap 을 쓰려면 별도 파티션을 만든다.
 
 	# lsblk
 	
-포멧. 예,
+포멧.
 
-	# mkfs.ext4 /dev/sda1
+	# mkfs.ext4 /dev/<partition>
 
-시스템 파티션 외 데이터 파티션 포멧시에는 -m 0 옵션을 붙여서 5%의 디스크 낭비를 막는다.
+시스템 파티션외 데이터 파티션 포멧시에는 -m 0 옵션을 붙여서 5%의 디스크 낭비를 막는다.
 
 ## Mount the partitions
 
@@ -236,14 +240,13 @@ IP 확인.
 미러리스트는 pacstrap 에 의해 새 시스템에 복사되니 여기서 미리 잘 편집해 둔다.
 keepalive 때문에 HTTP 가 FTP 보다 훨 빠르다.
 
-미러 리스트를 수정한다.
-kaist 를 찾아 목록 제일 위로 올린다.
+미러 리스트에서 kaist 를 찾아 목록 제일 위로 올린다.
 
 	/etc/pacman.d/mirrorlist
 	
-미러를 업데이트했으면 패키지 목록을 반드시 업데이트하도록 한다.
+미러 리스트를 수정했으면 패키지 목록을 반드시 업데이트한다.
 
-	pacman -Syy
+	# pacman -Syy
 	
 	-yy: -y 를 쌍으로 쓰면 더 강력한 업데이트를 한다.
 
@@ -284,7 +287,7 @@ fstab 의 마지막 필드는 파일 시스템 체크 순서.
 
 ## Locale
 
-생성할 locale 을 지정.
+생성할 locale 을 선택.
 
 	/etc/locale.gen
 	
@@ -317,9 +320,9 @@ locale.conf 생성
 
 이 명령으로 /etc/adjtime 파일이 자동 생성된다.
 
-리눅스에서 로컬 타임을 쓰면 다양한 문제가 발생한다. 비추.
+리눅스에서 로컬 타임을 쓰면 다양한 문제가 발생한다.
 윈도우는 로컬 타임을 쓴다.
-로고 윈도우와 리눅스를 듀얼 부팅하면 다양한 문제가 발생한다.
+고로 윈도우와 리눅스를 듀얼 부팅하면 다양한 문제가 발생한다.
 
 ## Service management
 
@@ -327,11 +330,11 @@ locale.conf 생성
 
 아치는 서비스 관리에 systemd 를 사용한다.
 
-부팅시 실행되도록 등록. 바로 실행하진 않는다.
+부팅시 실행되도록 서비스를 등록한다. 바로 실행되진 않는다.
 
 	# systemctl enable <service>
 
-부팅시 실행과 상관없이 바로 실행.
+서비스를 바로 실행한다.
 
 	# systemctl start <service>
 
@@ -341,12 +344,12 @@ locale.conf 생성
 
 ## NTP
 
-설치
+설치.
 
 	# pacman -S ntp
 	# systemctl enable ntpd
 	
-설정 파일
+설정.
 
 	/etc/ntp.conf
 	
@@ -354,11 +357,11 @@ locale.conf 생성
 	server 1.pool.ntp.org iburst
 	server 2.pool.ntp.org iburst
 	
-네트웍 상태가 좋지 않을 때 밴당하지 않기위해 iburst 옵션을 추가해 놓는다.
+네트웍 상태가 좋지 않아 여러번 리퀘스트를 보냈다가 밴당하지 않기위해 iburst 옵션을 추가해 놓는다.
 	
 ## hostname
 
-호스트이름 설정
+호스트이름 지정.
 
 	# echo myhostname > /etc/hostname
 
@@ -401,7 +404,7 @@ systemd 가 '-' 을 특별히 인식하므로 프로파일 이름에 '-' 을 넣
 
 	# netctl enable default
 	
-이 단계에서 "Running in chroot, ignoring request." 경고는 무시한다.
+"Running in chroot, ignoring request." 경고는 무시한다.
 
 ### Wireless
 
@@ -418,7 +421,7 @@ systemd 가 '-' 을 특별히 인식하므로 프로파일 이름에 '-' 을 넣
 
 ## Root password
 	
-루트 패스워드 생성.
+루트 패스워드 지.
 
 	# passwd
 

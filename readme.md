@@ -6,7 +6,7 @@
 * [Functional Programming For The Rest of Us](categories/fp-for-r-us)
 * [Linux](categories/linux)
 * [Linux Installing Arch](categories/linux/installing-arch.md)
-* [Linux Raid](categories/linux/raid)
+* [Linux MDADM](categories/linux/mdadm.md)
 * [Programming in Scala](categories/pi-scala)
 * [Java Spring](categories/java/spring)
 * [Java Hibernate](categories/java/hibernate)
