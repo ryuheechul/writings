@@ -1,6 +1,6 @@
 # Installing Arch
 
-2014.01.21
+2014.01.21~
 
 [https://wiki.archlinux.org/index.php/Beginners'_Guide](https://wiki.archlinux.org/index.php/Beginners%27_Guide)
 
@@ -555,7 +555,7 @@ sudo 는 root 비밀번호 대신 내 비밀번호를 입력하고 root 권한�
 
 설정.
 
-	#visudo
+	# visudo
 	
 wheel 그룹이 sudo 쓸 수 있게 하려면 아래 설정을 찾아 언코멘트.
 
