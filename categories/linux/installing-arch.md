@@ -363,7 +363,9 @@ locale.conf 생성
 
 호스트이름 지정.
 
-	# echo myhostname > /etc/hostname
+	# echo myhostname.domain.com > /etc/hostname
+
+Postfix 에서 도메인 이름을 가져다 사용하니 정확히 넣어두도록한다.
 
 ## Network for new root
 
@@ -528,19 +530,6 @@ bash-completion 패키지 설치
 
 	# pacman -S bash-completion
 	
-## sudo
-
-세팅하기 골치아프니 걍 su 를 쓴다.
-
-## su
-
-이미 루트로 로그인했을 것인데 추후 root 쉘이 필요할 때는 su 를 사용한다.
-
-	$ su -
-
-보안상 '-' 를 꼭 써야한다.
-'-' 를 붙이면 디렉토리가 /root 로 이동하고 기존 사용자 환경변수 대신 root 의 환경 변수를 사용한다.
-
 ## User management
 	
 사용자 추가
@@ -554,6 +543,32 @@ bash-completion 패키지 설치
 
 	# passwd <username>
 
+## sudo
+
+sudo 는 root 비밀번호 대신 내 비밀번호를 입력하고 root 권한을 얻는 개념이다.
+
+설치.
+
+	# pacman -S sudo
+
+설정파일은 /etc/sudoers 인데 문법 오류나면 sudo 안 되면서 망하므로 반드시 visudo 로 편집한다.
+
+설정.
+
+	#visudo
+	
+wheel 그룹이 sudo 쓸 수 있게 하려면 아래 설정을 찾아 언코멘트.
+
+	%wheel ALL=(ALL) ALL
+	
+패스워드 재입력 시간을 60 분으로 설정하려면.
+
+	Defaults timestamp_timeout=60
+	
+터미널 별로 패스워드 입력받는 것을 막으려면.
+
+	Defaults !tty_tickets
+
 ## ssh
 
 설치.
@@ -563,19 +578,12 @@ bash-completion 패키지 설치
 	# systemctl start sshd
 	# systemctl enable sshd
 
-### sshd 설정
-	
-원할 경우 설정파일을 수정한다.
+설정.
 
 	/etc/ssh/sshd_config
 
-특정 유저만 접속 가능하게
-
-	AllowUsers user1 user2
-
-루트 로그인 불가능하게
-
-	PermitRootLogin no
+	AllowUsers user1 user2 <-- 특정 유저만 접속 가능하게
+	PermitRootLogin no <-- 루트 로그인 불가능하게
 
 ## ufw
 
@@ -604,19 +612,83 @@ iptables 가 비활성화 (Active: inactive) 상태인 것을 확인한다. ufw 
 	# ufw status
 
 smtp 는 열지 않아도 메일 발송에 문제가 없다.
-	
+
+## Applications
+
+여기서 부터는 개인적으로 사용하는 패키지나 사이트 설정에 대해 메모해 놓은 것입니다.
+
+## Bash
+
+	~/.bashrc
+
+	alias lla='ls -alFv'
+	alias ll='ls -lFv'
+	alias la='ls -CFav'
+	alias l='ls -CFv'
+
+## Data directory
+
+	# mkdir /data
+	# chown drypot:wheel /data
+
+## Node
+
+	# pacman -S nodejs
+
 ## Nginx
 
 	# pacman -S nginx
-	
-## Node
-
-	...
+	# systemctl enable nginx
 
 ## MonogoDB
 
+	# pacman -S mongodb
+	# systemctl enable mongodb
+
+	# mkdir /data/mongodb
+	# chown mongodb:daemon /data/mongodb
+
+설정.
+
+	/etc/mongodb.conf
+
+	dbpath=/data/mongodb
+
+테스트.
+
+	# systemctl start mongodb
+
 	...
 
-## ImageMagik
+## ImageMagick
 
-	...
+	# pacman -S imagemagick
+
+## Postfix
+
+	# pacman -S postfix
+	# systemctl enable postfix
+
+설정. 작업중;
+
+	/etc/postfix/main.cf
+
+	myhostname = ... <-- hostname 에서 자동으로 가져온다.
+	mydomain = ... <-- hostname 에서 자동으로 가져온다.
+	
+	mydestination = $mydomain <-- 찾아서 언코멘트
+	myorigin = $mydomain <-- 찾아서 언코멘트
+	mynetworks_style = host <-- 찾아서 언코멘트
+
+메일 발송 테스트. 작업중;
+
+	# systemctl start postfix
+	
+	# sendmail -oi drypot@gmail.com << EOF
+	From: drypot@a2
+	Subject: testing sendmail
+	
+	body of message
+	EOF
+
+메일을 발송하려면 DNS에 미리 메일 서버 IP를 등록해놔야한다.
