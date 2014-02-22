@@ -631,14 +631,19 @@ smtp 는 열지 않아도 메일 발송에 문제가 없다.
 	# mkdir /data
 	# chown drypot:wheel /data
 
-## Node
-
-	# pacman -S nodejs
-
 ## Nginx
 
 	# pacman -S nginx
 	# systemctl enable nginx
+	
+### /etc/nginx/nginx.conf
+	
+	include /data/nginx/nginx.conf;
+	
+### /data/nginx/nginx.conf
+
+	...
+	
 
 ## MonogoDB
 
@@ -660,9 +665,17 @@ smtp 는 열지 않아도 메일 발송에 문제가 없다.
 
 	...
 
-## ImageMagick
+## Redis
 
-	# pacman -S imagemagick
+	# pacman -S redis
+	# systemctl enable redis
+
+설정.
+
+	/etc/redis.conf
+
+save 로 시작하는 부분 코멘트해서 디스크 저장을 못하게 한다.
+
 
 ## Postfix
 
@@ -692,3 +705,47 @@ smtp 는 열지 않아도 메일 발송에 문제가 없다.
 	EOF
 
 메일을 발송하려면 DNS에 미리 메일 서버 IP를 등록해놔야한다.
+
+## Base-devel
+
+C, make 등 기본 컴파일 도구 설치
+
+	# pacman -S base-devel
+	
+## Node
+
+	# pacman -S nodejs
+
+	# npm install -g mocha
+	
+	...
+	
+## Git
+
+	# pacman -S git
+	
+## ImageMagick
+
+	# pacman -S imagemagick
+	# pacman -S librsvg <-- svg 지원을 위해 필요
+
+libpng 는 svg 지원 설치하면서 어쩌다 설치되는 것 같다.
+
+## Rapixel
+
+	$ mkdir /data/web
+	$ cd /data/web
+
+	$ git clone https://github.com/drypot/rapixel.git
+	$ cd rapixel
+	
+	$ npm update
+	
+설정.
+
+	config/rapixel-live.json
+	
+실행.
+
+	bin/run rapixel live
+	 
