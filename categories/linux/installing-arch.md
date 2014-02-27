@@ -57,7 +57,7 @@ MBR 과 첫 파티션 사이를 Post MBR gap 이라 하는데 GRUB core.img 가 
 
 블럭 디바이스 확인.
 
-	# lsblk
+	# lsblk <-- -f 붙이면 uuid 까지 나온다.
 	
 MBR 은 fdisk 로 생성한다.
  
@@ -276,9 +276,11 @@ fstab 생성.
 fstab 의 마지막 필드는 파일 시스템 체크 순서.
 
 	1: root
-	2: 기타
+	2: root 이외 파티션은 2 로 한다.
 	0: do not check. Btrfs 는 0 이어야 한다.
-	
+
+fstab 항목들은 부팅시 systemd mount units 들로 자동 변환된다.
+
 ## chroot
 
 루트 변경
@@ -617,6 +619,39 @@ smtp 는 열지 않아도 메일 발송에 문제가 없다.
 
 여기서 부터는 개인적으로 사용하는 패키지나 사이트 설정에 대해 메모해 놓은 것입니다.
 
+## MDADM
+
+MDADM 레이드 생성작업이 끝났으면 어레이를 등록한다.
+
+	# mdadm --detail --brief /dev/md0 >> /etc/mdadm/mdadm.conf
+
+재부팅후 레이드 상태 점검.
+
+	$ cat /proc/mdstat
+
+## Data directory
+
+	# mkdir /data
+	# chown drypot:wheel /data
+
+기타 볼륨 마운트
+
+	# mkdir /dataN 
+	# mount <device> /dataN
+
+볼륨의 uuid 확인
+
+	$ lsblk -f
+
+	$ ls -l /dev/disk/by-uuid
+
+fstab 에 추가
+
+	/etc/fstab
+
+	UUID=.... /data2 ext4 defaults 0 2
+	UUID=.... /data3 ext4 defaults 0 2
+
 ## Bash
 
 	~/.bashrc
@@ -626,10 +661,39 @@ smtp 는 열지 않아도 메일 발송에 문제가 없다.
 	alias la='ls -CFav'
 	alias l='ls -CFv'
 
-## Data directory
+## Base-devel
 
-	# mkdir /data
-	# chown drypot:wheel /data
+C, make 등 기본 컴파일 도구 설치
+
+	# pacman -S base-devel
+
+## Git
+
+	# pacman -S git
+
+## Postfix
+
+	# pacman -S postfix
+	# systemctl enable postfix
+
+설정.
+
+	/etc/postfix/main.cf
+
+	myhostname = ... <-- hostname 에서 자동으로 가져온다.
+	mydomain = ... <-- hostname 에서 자동으로 가져온다.
+	
+	mydestination = $mydomain <-- 찾아서 언코멘트
+	myorigin = $mydomain <-- 찾아서 언코멘트
+	mynetworks_style = host <-- 찾아서 언코멘트
+
+메일 발송 테스트. rapixel 프로젝트 루트에서.
+
+	$ node lib/mail-script/test-send.js
+
+메일을 발송하려면 DNS SPF 레코드에 메일 서버 IP를 등록해놔야한다.
+
+	v=spf1 include:aspmx.googlemail.com ip4:219.254.35.24 ip4:219.254.35.25 ip4:219.254.35.26 ip4:219.254.35.27 ~all
 
 ## Nginx
 
@@ -643,7 +707,6 @@ smtp 는 열지 않아도 메일 발송에 문제가 없다.
 ### /data/nginx/nginx.conf
 
 	...
-	
 
 ## MonogoDB
 
@@ -676,42 +739,6 @@ smtp 는 열지 않아도 메일 발송에 문제가 없다.
 
 save 로 시작하는 부분 코멘트해서 디스크 저장을 못하게 한다.
 
-
-## Postfix
-
-	# pacman -S postfix
-	# systemctl enable postfix
-
-설정. 작업중;
-
-	/etc/postfix/main.cf
-
-	myhostname = ... <-- hostname 에서 자동으로 가져온다.
-	mydomain = ... <-- hostname 에서 자동으로 가져온다.
-	
-	mydestination = $mydomain <-- 찾아서 언코멘트
-	myorigin = $mydomain <-- 찾아서 언코멘트
-	mynetworks_style = host <-- 찾아서 언코멘트
-
-메일 발송 테스트. 작업중;
-
-	# systemctl start postfix
-	
-	# sendmail -oi drypot@gmail.com << EOF
-	From: drypot@a2
-	Subject: testing sendmail
-	
-	body of message
-	EOF
-
-메일을 발송하려면 DNS에 미리 메일 서버 IP를 등록해놔야한다.
-
-## Base-devel
-
-C, make 등 기본 컴파일 도구 설치
-
-	# pacman -S base-devel
-	
 ## Node
 
 	# pacman -S nodejs
@@ -719,10 +746,6 @@ C, make 등 기본 컴파일 도구 설치
 	# npm install -g mocha
 	
 	...
-	
-## Git
-
-	# pacman -S git
 	
 ## ImageMagick
 
@@ -748,4 +771,54 @@ libpng 는 svg 지원 설치하면서 어쩌다 설치되는 것 같다.
 실행.
 
 	bin/run rapixel live
-	 
+
+
+## Registering Rapixel as a Service
+
+/usr/lib/systemd 디렉토리는 패키지의 유닛 파일들만 들어간다.
+사용자 추가 유닛들은 /etc/systemd/system 에 생성.
+
+	/etc/systemd/system/rapixel.serivce
+
+	[Unit]
+	Description=Rapixel
+	Requires=nginx.service mongodb.service redis.service
+	After=nginx.service mongodb.service redis.service
+
+	[Service]
+	User=drypot
+	Restart=always
+	RestartSec=15
+	WorkingDirectory=/data/web/rapixel
+	ExecStart=/usr/bin/node lib/app/app.js --config config/rapixel-live.json
+	Environment=NODE_ENV=production
+
+	[Install]
+	WantedBy=multi-user.target
+
+참고.
+
+	Group 을 지정하지 않으면 유저 기본 그룹을 사용.
+	StandardOutput 을 지정하지 않으면 journal 을 사용.
+	syslog 를 지정하면 syslog 에도 쌓이고 journal 에도 쌓인다. journal 에는 기본적으로 쌓임.
+	[Install] 파트는 enable, disable 명령에서 사용한다.
+
+## Registering Sleek as a Service
+
+	/etc/systemd/system/sleek.serivce
+
+	[Unit]
+	Description=Sleek
+	Requires=nginx.service mongodb.service redis.service
+	After=nginx.service mongodb.service redis.service
+
+	[Service]
+	User=drypot
+	Restart=always
+	RestartSec=15
+	WorkingDirectory=/data/web/sleek
+	ExecStart=/usr/bin/node server/main/app.js config-live/config-ssm.json
+	Environment=NODE_ENV=production
+
+	[Install]
+	WantedBy=multi-user.target
