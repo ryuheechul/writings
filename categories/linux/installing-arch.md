@@ -798,10 +798,10 @@ libpng 는 svg 지원 설치하면서 어쩌다 설치되는 것 같다.
 
 참고.
 
-	Group 을 지정하지 않으면 유저 기본 그룹을 사용.
-	StandardOutput 을 지정하지 않으면 journal 을 사용.
-	syslog 를 지정하면 syslog 에도 쌓이고 journal 에도 쌓인다. journal 에는 기본적으로 쌓임.
-	[Install] 파트는 enable, disable 명령에서 사용한다.
+* Group 을 지정하지 않으면 유저 기본 그룹을 사용.
+* StandardOutput 을 지정하지 않으면 journal 을 사용.
+* syslog 를 지정하면 syslog 에도 쌓이고 journal 에도 쌓인다. journal 에는 기본적으로 쌓임.
+* [Install] 파트는 enable, disable 명령에서 사용한다.
 
 ## Registering Sleek as a Service
 
