@@ -1,15 +1,30 @@
 # Some Technical Writings
 
-* [Git ABC](categories/git-abc)
-* [jQuery](categories/jquery)
+## JavaScript
+
+* [JavaScript ABC](categories/javascript/javascript-abc)
 * [Node.js](categories/node)
-* [Functional Programming For The Rest of Us](categories/fp-for-r-us)
-* [Linux](categories/linux)
+* [jQuery](categories/jquery)
+
+## Git
+
+* [Git ABC](categories/git-abc)
+
+## Linux
+
 * [Linux Installing Arch](categories/linux/installing-arch.md)
 * [Linux MDADM](categories/linux/mdadm.md)
-* [Programming in Scala](categories/pi-scala)
+* [Linux](categories/linux)
+
+## Functional Programming
+
+* [Functional Programming For The Rest of Us](categories/fp-for-r-us)
+
+## Java
+
 * [Java Spring](categories/java/spring)
 * [Java Hibernate](categories/java/hibernate)
+* [Programming in Scala](categories/pi-scala)
 
 >
 
