@@ -623,7 +623,7 @@ smtp 는 열지 않아도 메일 발송에 문제가 없다.
 
 MDADM 레이드 생성작업이 끝났으면 어레이를 등록한다.
 
-	# mdadm --detail --brief /dev/md0 >> /etc/mdadm/mdadm.conf
+	# mdadm --detail --brief /dev/md0 >> /etc/mdadm.conf
 
 재부팅후 레이드 상태 점검.
 
