@@ -43,6 +43,10 @@
 
 	$ git status
 
+축약 버전.
+
+	$ git status -s
+
 인덱스에 등록된 파일 목록을 볼 수 있다.
 
 	$ git ls-files -s
