@@ -7,9 +7,9 @@
 
 	$ brew install git
 
-아래 설정으로 이후 리포지터리 로그인 정보를 케쉬할 수 있으므로 해둔다.
+아래 명령으로 리포지터리 로그인 정보를 케쉬할 수 있으므로 해둔다.
 
-	git config --global credential.helper osxkeychain
+	$ git config --global credential.helper osxkeychain
 
 ## Ubuntu
 

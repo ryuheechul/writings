@@ -13,7 +13,7 @@ Git 를 사용하기에 앞서 사용자명을 등록해야한다.
 
 설정파일은 3 단계로 존재한다.
 
-	./.git/config         # default
+	./.git/config       # default
 	~/.gitconfig        # with the --global option
 	/etc/gitconfig      # with the --system option
 
