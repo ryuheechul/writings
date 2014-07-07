@@ -48,7 +48,7 @@ Lazy evaluation provides a higher order of abstraction that allows implementing 
 
 We want sendToSEC executed unless the stock is European. How can we implement unless? Without lazy evaluation we'd need some form of a macro system, but in a language like Haskell that's unnecessary. We can implement unless as a function!
 
-`stock` 이 European 이면 `sendToSec` 을 실행하길 원합니다. `unless` 를 어떻게 구현할 수 있을까요? 지연 평가가 없다면 어떤 형태의 매크로 시스템이 필요할 겁니다. 하지만 Haskell 같은 언어에서 그런 것은 필요없습니다. `unless` 를 펑션으로 구현할 수 있습니다.
+`stock` 이 European 이 아니면 `sendToSec` 을 실행하길 원합니다. `unless` 를 어떻게 구현할 수 있을까요? 지연 평가가 없다면 어떤 형태의 매크로 시스템이 필요할 겁니다. 하지만 Haskell 같은 언어에서 그런 것은 필요없습니다. `unless` 를 펑션으로 구현할 수 있습니다.
 
 	void unless(boolean condition, List code) {
 		if(!condition)
